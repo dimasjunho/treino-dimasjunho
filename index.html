@@ -163,7 +163,22 @@ function salvarTreino(){
   S.tr.unshift(wo);sv("tr",S.tr);
   const k=Object.assign({},S.km);if(sk&&wo.km>0)k[sk]=(k[sk]||0)+wo.km;S.km=k;sv("km",k);
   S.imgs=[];S.notas="";S.dist="";
-  alert("Treino salvo!");setTab("hist");
+  fazerBackupSilencioso();
+  alert("Treino salvo! Backup automatico gerado.");setTab("hist");
+}
+
+function fazerBackupSilencioso(){
+  try{
+    const dados={w:S.w,tv:S.tv,tr:S.tr,km:S.km,backup_data:new Date().toLocaleDateString("pt-BR")};
+    const json=JSON.stringify(dados,null,2);
+    const blob=new Blob([json],{type:"application/json"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");
+    a.href=url;
+    a.download="backup_treino_dimas_"+new Date().toLocaleDateString("pt-BR").replace(/\//g,"-")+".json";
+    a.click();
+    URL.revokeObjectURL(url);
+  }catch(e){console.log("Backup erro:",e);}
 }
 
 function xpdf(i){
@@ -179,7 +194,7 @@ function render(){
   const d1day=S.tv?"Quarta (Catole)":"Terca (JP)";
   const d2day=S.tv?"Domingo (JP)":"Sexta (JP)";
   const d2ten=isSC?"SC Trainer V3 (New Balance)":"Glycerin Max (Brooks)";
-  const tabs=[["home","INICIO"],["reg","REGISTRO"],["hist","HISTORICO"],["shoes","TENIS"]];
+  const tabs=[["home","INICIO"],["reg","REGISTRO"],["hist","HISTORICO"],["shoes","TENIS"],["backup","BACKUP"]];
 
   document.getElementById("nav").innerHTML=
     "<div class='nav-h'><div><h1>Semana "+S.w+"</h1><div class='fa'>"+pl.ph+"</div></div>"+(pl.rc?"<span class='rec-tag'>Recuperacao</span>":"")+"</div>"+
@@ -237,7 +252,67 @@ function render(){
       "<p style='font-size:15px;color:#546e7a;text-align:center;margin-top:8px;font-weight:700'>Km acumulados ao salvar treinos</p></div>";
   }
 
+
+  else if(S.tab==="backup"){
+    H="<div class='pg'><p class='h2'>Backup dos Dados</p>"+
+    "<div class='card-aviso'><p style='font-size:17px;font-weight:700;color:#90caf9;line-height:1.6'>Faca backup regularmente para nao perder seus treinos. Salve o arquivo no Google Drive ou envie para si mesmo pelo WhatsApp.</p></div>"+
+    "<div class='card-info' style='margin-bottom:14px'><p class='ten-nome'>Seus dados atuais</p><p class='tip'>"+S.tr.length+" treino(s) registrado(s)</p></div>"+
+    "<button class='btn btn-az' onclick='fazerBackup()'>FAZER BACKUP AGORA</button>"+
+    "<div style='height:1px;background:rgba(255,255,255,0.1);margin:8px 0 22px'></div>"+
+    "<p style='font-size:19px;font-weight:900;color:#fff;margin-bottom:14px'>Restaurar backup</p>"+
+    "<div class='card-aviso'><p style='font-size:17px;font-weight:700;color:#ffcc80;line-height:1.6'>Atencao: restaurar um backup substitui todos os dados atuais do app!</p></div>"+
+    "<button class='btn btn-vd' onclick="document.getElementById('finp-backup').click()">SELECIONAR ARQUIVO DE BACKUP</button>"+
+    "<input type='file' id='finp-backup' accept='.json' style='display:none' onchange='restaurarBackup(this)'>"+
+    "</div>";
+  }
   document.getElementById("scroll").innerHTML=H;
+}
+
+function fazerBackup(){
+  const dados = {
+    w: S.w,
+    tv: S.tv,
+    tr: S.tr,
+    km: S.km,
+    backup_data: new Date().toLocaleDateString("pt-BR")
+  };
+  const json = JSON.stringify(dados, null, 2);
+  const blob = new Blob([json], {type: "application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "backup_treino_dimas_" + new Date().toLocaleDateString("pt-BR").replace(/\//g,"-") + ".json";
+  a.click();
+  URL.revokeObjectURL(url);
+  alert("Backup salvo! Guarde o arquivo no Google Drive ou WhatsApp para si mesmo.");
+}
+
+function restaurarBackup(inp){
+  const file = inp.files[0];
+  if(!file)return;
+  const r = new FileReader();
+  r.onload = function(e){
+    try{
+      const dados = JSON.parse(e.target.result);
+      if(dados.tr !== undefined){
+        S.w = dados.w || 1;
+        S.tv = dados.tv || false;
+        S.tr = dados.tr || [];
+        S.km = Object.assign({boston13:0,glycerinMax:0,nimbus26:0,scTrainer:0}, dados.km || {});
+        sv("w", S.w);
+        sv("tv", S.tv);
+        sv("tr", S.tr);
+        sv("km", S.km);
+        alert("Backup restaurado com sucesso! " + S.tr.length + " treino(s) recuperado(s).");
+        render();
+      } else {
+        alert("Arquivo invalido. Selecione um backup valido.");
+      }
+    } catch(err){
+      alert("Erro ao ler o arquivo: " + err.message);
+    }
+  };
+  r.readAsText(file);
 }
 load();render();
 </script>

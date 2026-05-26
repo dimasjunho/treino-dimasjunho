@@ -218,7 +218,7 @@ async function analisarTreino(){
     var cnt=[];
     S.imgs.forEach(function(img){var p=img.split(",");cnt.push({type:"image",source:{type:"base64",media_type:p[0].match(/data:(.*);/)[1],data:p[1]}});});
     cnt.push({type:"text",text:"Faca uma analise COMPLETA e DETALHADA deste treino:\n\nSemana "+S.w+" | Dia "+S.dia+" | "+new Date().toLocaleDateString("pt-BR")+"\nDia: "+day+"\nTreino prescrito: "+di.t+" - Pace alvo: "+di.p+"\nTenis: "+ten+"\nDistancia: "+(S.dist||"nao informada")+"km\nObs: "+(S.notas||"nenhuma")+"\n\nResponda SOMENTE com JSON:\n{\"resumo\":\"resumo geral 2-3 frases\",\"metricas\":[{\"n\":\"nome\",\"v\":\"valor\",\"av\":\"otimo|bom|atencao\"}],\"canelas\":\"sem_dor|leve_desconforto|dor\",\"gelo\":true,\"positivos\":[\"item\"],\"atencao\":[\"item\"],\"analise\":\"analise longa e detalhada de tudo que observou nas imagens: splits por km, FC por zona, cadencia, oscilacao vertical, assimetria, biomecânica, efeito do calor de JP, comparacao com treinos anteriores, pontos de melhora\",\"proximo\":\"orientacao detalhada para o proximo treino: qual dia, qual tenis, distancia, pace, gelo, alongamentos, o que observar\"}"});
-    var resp=await fetch("https://flat-mode-3790.dimasjunho.workers.dev",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":S.ak,"anthropic-version":"2023-06-01"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:2000,system:SYS,messages:[{role:"user",content:cnt}]})});
+    var resp=await fetch("https://flat-mode-3790.dimasjunho.workers.dev",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":S.ak,"anthropic-version":"2023-06-01"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:2000,system:SYS,messages:[{role:"user",content:cnt}]})});
     var data=await resp.json();
     if(data.error)throw new Error(data.error.message);
     S.rel=JSON.parse(data.content[0].text.replace(/```json|```/g,"").trim());
@@ -274,7 +274,7 @@ async function enviarChat(){
   setTimeout(function(){var cm=document.getElementById("cmsg");if(cm)cm.scrollTop=cm.scrollHeight;},50);
   try{
     var msgs=S.chat.map(function(m){return {role:m.role,content:m.content||[{type:"text",text:m.text||""}]};});
-    var resp=await fetch("https://flat-mode-3790.dimasjunho.workers.dev",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":S.ak,"anthropic-version":"2023-06-01"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1500,system:SYS,messages:msgs})});
+    var resp=await fetch("https://flat-mode-3790.dimasjunho.workers.dev",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":S.ak,"anthropic-version":"2023-06-01"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1500,system:SYS,messages:msgs})});
     var data=await resp.json();
     if(data.error)throw new Error(data.error.message);
     var rtxt=data.content.filter(function(c){return c.type==="text";}).map(function(c){return c.text;}).join("\n");

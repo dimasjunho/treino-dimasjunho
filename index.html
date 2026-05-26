@@ -218,10 +218,14 @@ async function analisarTreino(){
     var cnt=[];
     S.imgs.forEach(function(img){var p=img.split(",");cnt.push({type:"image",source:{type:"base64",media_type:p[0].match(/data:(.*);/)[1],data:p[1]}});});
     cnt.push({type:"text",text:"Faca uma analise COMPLETA e DETALHADA deste treino:\n\nSemana "+S.w+" | Dia "+S.dia+" | "+new Date().toLocaleDateString("pt-BR")+"\nDia: "+day+"\nTreino prescrito: "+di.t+" - Pace alvo: "+di.p+"\nTenis: "+ten+"\nDistancia: "+(S.dist||"nao informada")+"km\nObs: "+(S.notas||"nenhuma")+"\n\nResponda SOMENTE com JSON:\n{\"resumo\":\"resumo geral 2-3 frases\",\"metricas\":[{\"n\":\"nome\",\"v\":\"valor\",\"av\":\"otimo|bom|atencao\"}],\"canelas\":\"sem_dor|leve_desconforto|dor\",\"gelo\":true,\"positivos\":[\"item\"],\"atencao\":[\"item\"],\"analise\":\"analise longa e detalhada de tudo que observou nas imagens: splits por km, FC por zona, cadencia, oscilacao vertical, assimetria, biomecânica, efeito do calor de JP, comparacao com treinos anteriores, pontos de melhora\",\"proximo\":\"orientacao detalhada para o proximo treino: qual dia, qual tenis, distancia, pace, gelo, alongamentos, o que observar\"}"});
-    var resp=await fetch("https://flat-mode-3790.dimasjunho.workers.dev",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":S.ak,"anthropic-version":"2023-06-01"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:2000,system:SYS,messages:[{role:"user",content:cnt}]})});
+    var resp=await fetch("https://flat-mode-3790.dimasjunho.workers.dev",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":S.ak,"anthropic-version":"2023-06-01"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:4000,system:SYS,messages:[{role:"user",content:cnt}]})});
     var data=await resp.json();
     if(data.error)throw new Error(data.error.message);
-    S.rel=JSON.parse(data.content[0].text.replace(/```json|```/g,"").trim());
+    var rawTxt=data.content[0].text.replace(/```json|```/g,"").trim();
+    var jStart=rawTxt.indexOf("{");
+    var jEnd=rawTxt.lastIndexOf("}");
+    if(jStart>=0&&jEnd>jStart){rawTxt=rawTxt.substring(jStart,jEnd+1);}
+    try{S.rel=JSON.parse(rawTxt);}catch(e2){S.rel={resumo:rawTxt.substring(0,300)+"...",metricas:[],canelas:"sem_dor",gelo:false,positivos:["Treino registrado"],atencao:["Analise incompleta - tente novamente sem imagens muito pesadas"],analise:rawTxt.substring(0,1000),proximo:"Tente analisar novamente."};} 
   }catch(err){S.rel={resumo:"Erro: "+err.message,metricas:[],canelas:"sem_dor",gelo:false,positivos:[],atencao:[],analise:"Tente novamente.",proximo:""};}
   S.load=false;render();
 }

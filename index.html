@@ -121,8 +121,8 @@ textarea::placeholder,input::placeholder{color:#546e7a}
 .cwn{color:#ff9800}
 .cer{color:#f44336}
 /* CHAT */
-.chat-area{display:flex;flex-direction:column;height:100%;max-height:100%}
-.chat-msgs{flex:1;overflow-y:auto;padding:16px;-webkit-overflow-scrolling:touch}
+.chat-area{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;z-index:50}
+.chat-msgs{flex:1;overflow-y:auto;padding:16px;-webkit-overflow-scrolling:touch;padding-bottom:8px}
 .msg-wrap{display:flex;flex-direction:column;margin-bottom:12px}
 .msg-wrap.u{align-items:flex-end}
 .msg-wrap.b{align-items:flex-start}
@@ -415,7 +415,7 @@ function render(){
       }).join("")+(S.chatLoad?"<div class='loading-msg'><span class='spin'>&#8635;</span> Analisando...</div>":"");
     }
     var ciImgsH=S.chatImgs.length?"<div class='chat-inp-imgs'>"+S.chatImgs.map(function(_,i){return "<div class='ci-th'><img id='cith"+i+"'><button class='ci-del' onclick='rmCI("+i+")'>x</button></div>";}).join("")+"</div>":"";
-    var navH=document.getElementById("nav").offsetHeight||110;main.style.height=(window.innerHeight-navH)+"px";main.innerHTML="<div class='chat-area'><div class='chat-msgs' id='chat-msgs'>"+msgsH+"</div><div class='chat-inp'>"+ciImgsH+"<div class='chat-inp-row'><button class='ci-btn' onclick='document.getElementById(\"ci-fi\").click()'>&#128247;</button><input type='file' id='ci-fi' accept='image/*' multiple style='display:none' onchange='addCI(this)'><textarea class='ci-ta' id='ci-ta' rows='2' placeholder='Mensagem...' onkeydown='chatEnter(event)' oninput='S.chatInp=this.value'>"+S.chatInp+"</textarea><button class='ci-send' onclick='enviarChat()' "+(S.chatLoad||(!S.chatInp.trim()&&!S.chatImgs.length)?"disabled":"")+" >&#10148;</button></div></div></div>";
+    var navH=document.getElementById("nav").offsetHeight||110;main.style.height="";main.innerHTML="<div class='chat-area' style='padding-top:"+navH+"px'><div class='chat-msgs' id='chat-msgs'>"+msgsH+"</div><div class='chat-inp'>"+ciImgsH+"<div class='chat-inp-row'><button class='ci-btn' onclick='document.getElementById(\"ci-fi\").click()'>&#128247;</button><input type='file' id='ci-fi' accept='image/*' multiple style='display:none' onchange='addCI(this)'><textarea class='ci-ta' id='ci-ta' rows='2' placeholder='Mensagem...' onkeydown='chatEnter(event)' oninput='S.chatInp=this.value'>"+S.chatInp+"</textarea><button class='ci-send' onclick='enviarChat()' "+(S.chatLoad||(!S.chatInp.trim()&&!S.chatImgs.length)?"disabled":"")+" >&#10148;</button></div></div></div>";
     S.chatImgs.forEach(function(_,i){var el=document.getElementById("cith"+i);if(el)el.src=S.chatImgs[i];});
     setTimeout(function(){var cm=document.getElementById("chat-msgs");if(cm)cm.scrollTop=cm.scrollHeight;},50);
     return;

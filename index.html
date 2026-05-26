@@ -13,99 +13,152 @@ html,body{height:100%;overflow:hidden}
 #A{font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif;background:#1a1a2e;height:100vh;display:flex;flex-direction:column;overflow:hidden}
 .nav{background:#16213e;border-bottom:4px solid #e91e63;flex-shrink:0}
 .nav-h{padding:16px 16px 10px;display:flex;justify-content:space-between;align-items:center}
-.nav-h h1{font-size:32px;font-weight:900;color:#fff;line-height:1}
-.nav-h .fa{font-size:16px;color:#64b5f6;margin-top:4px;font-weight:700}
-.rec-tag{background:#00e676;color:#003300;padding:6px 12px;border-radius:20px;font-size:14px;font-weight:900;white-space:nowrap}
+.nav-h h1{font-size:30px;font-weight:900;color:#fff;line-height:1}
+.nav-h .fa{font-size:15px;color:#64b5f6;margin-top:4px;font-weight:700}
+.rec-tag{background:#00e676;color:#003300;padding:5px 10px;border-radius:18px;font-size:13px;font-weight:900;white-space:nowrap}
 .tabs{display:flex;background:#0f3460}
-.tb{flex:1;border:none;border-bottom:4px solid transparent;background:transparent;cursor:pointer;padding:14px 2px 11px;font-family:inherit;font-size:13px;font-weight:900;color:#7986cb}
+.tb{flex:1;border:none;border-bottom:4px solid transparent;background:transparent;cursor:pointer;padding:13px 1px 10px;font-family:inherit;font-size:12px;font-weight:900;color:#7986cb}
 .tb.on{color:#fff;border-bottom-color:#e91e63;background:#1a1a4e}
 .scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .pg{padding:16px 16px 100px}
-.card-viagem{background:linear-gradient(135deg,#1565c0,#0d47a1);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 15px rgba(21,101,192,0.5)}
-.card-d1{background:linear-gradient(135deg,#c62828,#b71c1c);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 15px rgba(198,40,40,0.5)}
-.card-d2-b{background:linear-gradient(135deg,#1565c0,#0d47a1);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 15px rgba(21,101,192,0.5)}
-.card-d2-g{background:linear-gradient(135deg,#2e7d32,#1b5e20);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 15px rgba(46,125,50,0.5)}
-.card-ck{background:linear-gradient(135deg,#4a148c,#311b92);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 15px rgba(74,20,140,0.5)}
-.card-info{background:linear-gradient(135deg,#e65100,#bf360c);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 15px rgba(230,81,0,0.5)}
-.card-aviso{background:linear-gradient(135deg,#0d47a1,#1a237e);border-radius:18px;padding:18px;margin-bottom:16px;border:2px solid #42a5f5}
-.card-alerta{background:linear-gradient(135deg,#7f3f00,#5d2e00);border-radius:18px;padding:18px;margin-bottom:16px;border:2px solid #ff9800}
-.cg-claro{background:rgba(255,255,255,0.18);border-radius:12px;padding:14px;margin-top:12px}
-.lbl{font-size:14px;text-transform:uppercase;letter-spacing:0.8px;font-weight:900;margin-bottom:8px;display:block;color:rgba(255,255,255,0.75)}
-.h2{font-size:28px;font-weight:900;margin-bottom:16px;color:#fff}
-.h3{font-size:24px;font-weight:900;margin-bottom:6px;line-height:1.2;color:#fff}
-.sub{font-size:18px;color:rgba(255,255,255,0.85);margin-bottom:10px;font-weight:700}
-.tip{font-size:16px;color:rgba(255,255,255,0.9);font-weight:600;line-height:1.5}
-.ten-nome{font-size:18px;font-weight:900;color:#fff;margin-bottom:6px}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:18px;border-radius:16px;border:none;cursor:pointer;font-size:20px;font-weight:900;font-family:inherit;margin-bottom:14px;box-shadow:0 4px 12px rgba(0,0,0,0.3)}
+.cv{background:linear-gradient(135deg,#1565c0,#0d47a1);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 15px rgba(21,101,192,0.5)}
+.cd1{background:linear-gradient(135deg,#c62828,#b71c1c);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 15px rgba(198,40,40,0.5)}
+.cd2b{background:linear-gradient(135deg,#1565c0,#0d47a1);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 15px rgba(21,101,192,0.5)}
+.cd2g{background:linear-gradient(135deg,#2e7d32,#1b5e20);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 15px rgba(46,125,50,0.5)}
+.cck{background:linear-gradient(135deg,#4a148c,#311b92);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 15px rgba(74,20,140,0.5)}
+.cinf{background:linear-gradient(135deg,#e65100,#bf360c);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 15px rgba(230,81,0,0.5)}
+.cav{background:linear-gradient(135deg,#0d47a1,#1a237e);border-radius:18px;padding:18px;margin-bottom:16px;border:2px solid #42a5f5}
+.cal{background:linear-gradient(135deg,#7f3f00,#5d2e00);border-radius:18px;padding:18px;margin-bottom:16px;border:2px solid #ff9800}
+.crel{background:linear-gradient(135deg,#1a237e,#0d1b4f);border-radius:18px;padding:18px;margin-bottom:14px;border:2px solid #3f51b5}
+.cbk{background:linear-gradient(135deg,#37474f,#263238);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 12px rgba(0,0,0,0.3)}
+.cg{background:rgba(255,255,255,0.18);border-radius:12px;padding:14px;margin-top:12px}
+.lbl{font-size:13px;text-transform:uppercase;letter-spacing:0.8px;font-weight:900;margin-bottom:8px;display:block;color:rgba(255,255,255,0.75)}
+.h2{font-size:26px;font-weight:900;margin-bottom:16px;color:#fff}
+.h3{font-size:22px;font-weight:900;margin-bottom:6px;line-height:1.2;color:#fff}
+.sub{font-size:17px;color:rgba(255,255,255,0.85);margin-bottom:10px;font-weight:700}
+.tip{font-size:15px;color:rgba(255,255,255,0.9);font-weight:600;line-height:1.5}
+.tnome{font-size:17px;font-weight:900;color:#fff;margin-bottom:6px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:17px;border-radius:16px;border:none;cursor:pointer;font-size:19px;font-weight:900;font-family:inherit;margin-bottom:14px;box-shadow:0 4px 12px rgba(0,0,0,0.3)}
 .btn:active{opacity:0.7;transform:scale(0.97)}
-.btn-az{background:linear-gradient(135deg,#1565c0,#0d47a1);color:#fff}
-.btn-vd{background:linear-gradient(135deg,#2e7d32,#1b5e20);color:#fff}
-.btn-am{background:linear-gradient(135deg,#f57f17,#e65100);color:#fff}
-.btn-foto{background:linear-gradient(135deg,#6a1b9a,#4a148c);color:#fff;flex-direction:column;gap:6px;padding:22px;border:none}
+.baz{background:linear-gradient(135deg,#1565c0,#0d47a1);color:#fff}
+.bvd{background:linear-gradient(135deg,#2e7d32,#1b5e20);color:#fff}
+.bam{background:linear-gradient(135deg,#f57f17,#e65100);color:#fff}
+.brx{background:linear-gradient(135deg,#c62828,#b71c1c);color:#fff}
+.bfoto{background:linear-gradient(135deg,#6a1b9a,#4a148c);color:#fff;flex-direction:column;gap:6px;padding:20px;border:none}
 .semn{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.semn .nb{width:64px;height:64px;border-radius:14px;border:none;font-size:28px;font-weight:900;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e91e63,#c2185b);color:#fff;box-shadow:0 4px 10px rgba(233,30,99,0.5)}
-.semn .mid{flex:1;text-align:center;background:linear-gradient(135deg,#0f3460,#16213e);border-radius:14px;padding:12px;border:2px solid #e91e63}
-.semn .mid .m1{font-size:22px;font-weight:900;color:#e91e63}
-.semn .mid .m2{font-size:15px;color:#90caf9;margin-top:3px;font-weight:700}
-.tog{border:none;border-radius:26px;padding:14px 22px;cursor:pointer;font-size:20px;font-weight:900;font-family:inherit}
+.semn .nb{width:60px;height:60px;border-radius:13px;border:none;font-size:26px;font-weight:900;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e91e63,#c2185b);color:#fff;box-shadow:0 4px 10px rgba(233,30,99,0.5)}
+.semn .mid{flex:1;text-align:center;background:linear-gradient(135deg,#0f3460,#16213e);border-radius:13px;padding:11px;border:2px solid #e91e63}
+.semn .mid .m1{font-size:20px;font-weight:900;color:#e91e63}
+.semn .mid .m2{font-size:14px;color:#90caf9;margin-top:3px;font-weight:700}
+.tog{border:none;border-radius:24px;padding:13px 20px;cursor:pointer;font-size:19px;font-weight:900;font-family:inherit}
 .tog.sim{background:linear-gradient(135deg,#00c853,#1b5e20);color:#fff;box-shadow:0 4px 10px rgba(0,200,83,0.5)}
 .tog.nao{background:#37474f;color:#90a4ae}
-.tog-wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.ck{display:flex;align-items:center;gap:14px;padding:15px 0;cursor:pointer;border-bottom:2px solid rgba(255,255,255,0.15)}
-.ckb{width:36px;height:36px;border-radius:9px;border:3px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:22px;font-weight:900}
+.togw{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ck{display:flex;align-items:center;gap:13px;padding:14px 0;cursor:pointer;border-bottom:2px solid rgba(255,255,255,0.15)}
+.ckb{width:34px;height:34px;border-radius:8px;border:3px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;font-weight:900}
 .ckb.on{background:#00c853;border-color:#00c853;color:#1b5e20}
 .ckb.off{background:rgba(255,255,255,0.1);color:transparent}
-.ckt{font-size:19px;line-height:1.35;font-weight:700;color:#fff}
+.ckt{font-size:18px;line-height:1.35;font-weight:700;color:#fff}
 .ckt.on{text-decoration:line-through;color:rgba(255,255,255,0.4)}
 .dsels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
-.dsel{padding:18px 8px;border-radius:16px;border:2px solid #37474f;background:#16213e;cursor:pointer;font-family:inherit;text-align:center;line-height:1.4}
-.dsel .dn{font-size:22px;font-weight:900;display:block;margin-bottom:4px;color:#90a4ae}
-.dsel .dd{font-size:16px;font-weight:700;color:#546e7a;display:block}
-.dsel.on-r{background:linear-gradient(135deg,#c62828,#b71c1c);border-color:#ef9a9a}
-.dsel.on-r .dn,.dsel.on-r .dd{color:#fff}
-.dsel.on-b{background:linear-gradient(135deg,#1565c0,#0d47a1);border-color:#90caf9}
-.dsel.on-b .dn,.dsel.on-b .dd{color:#fff}
-textarea,input[type=number]{width:100%;border-radius:14px;border:2px solid #37474f;padding:16px 18px;font-size:19px;font-family:inherit;background:#16213e;color:#fff;display:block;margin-bottom:14px;outline:none}
+.dsel{padding:17px 8px;border-radius:15px;border:2px solid #37474f;background:#16213e;cursor:pointer;font-family:inherit;text-align:center;line-height:1.4}
+.dsel .dn{font-size:21px;font-weight:900;display:block;margin-bottom:4px;color:#90a4ae}
+.dsel .dd{font-size:15px;font-weight:700;color:#546e7a;display:block}
+.dsel.onr{background:linear-gradient(135deg,#c62828,#b71c1c);border-color:#ef9a9a}
+.dsel.onr .dn,.dsel.onr .dd{color:#fff}
+.dsel.onb{background:linear-gradient(135deg,#1565c0,#0d47a1);border-color:#90caf9}
+.dsel.onb .dn,.dsel.onb .dd{color:#fff}
+textarea,input[type=number],input[type=password],input[type=text]{width:100%;border-radius:13px;border:2px solid #37474f;padding:15px 17px;font-size:18px;font-family:inherit;background:#16213e;color:#fff;display:block;margin-bottom:14px;outline:none}
 textarea{resize:none}
 textarea:focus,input:focus{border-color:#e91e63}
 textarea::placeholder,input::placeholder{color:#546e7a}
 .imgs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-.imgt{position:relative;width:90px;height:90px}
-.imgt img{width:90px;height:90px;object-fit:cover;border-radius:12px;border:2px solid #e91e63}
-.imgd{position:absolute;top:-8px;right:-8px;width:28px;height:28px;border-radius:14px;border:none;background:#f44336;cursor:pointer;font-size:18px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center}
+.imgt{position:relative;width:86px;height:86px}
+.imgt img{width:86px;height:86px;object-fit:cover;border-radius:11px;border:2px solid #e91e63}
+.imgd{position:absolute;top:-7px;right:-7px;width:26px;height:26px;border-radius:13px;border:none;background:#f44336;cursor:pointer;font-size:17px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center}
 .hcard{background:linear-gradient(135deg,#0f3460,#16213e);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 12px rgba(0,0,0,0.3);border:2px solid #1565c0}
 .hrow{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:8px}
-.htit{font-size:22px;font-weight:900;color:#64b5f6}
-.hsub{font-size:15px;color:#90a4ae;margin-top:3px;font-weight:700}
-.hres{font-size:17px;color:#b0bec5;line-height:1.6;margin-bottom:14px}
-.tag{padding:8px 14px;border-radius:22px;font-size:14px;font-weight:900;white-space:nowrap}
+.htit{font-size:21px;font-weight:900;color:#64b5f6}
+.hsub{font-size:14px;color:#90a4ae;margin-top:3px;font-weight:700}
+.hres{font-size:16px;color:#b0bec5;line-height:1.6;margin-bottom:14px}
+.tag{padding:7px 12px;border-radius:20px;font-size:13px;font-weight:900;white-space:nowrap}
 .tok{background:#00c853;color:#003300}
 .twn{background:#ff9800;color:#3e2000}
 .ter{background:#f44336;color:#fff}
 .tcard{border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 4px 12px rgba(0,0,0,0.3)}
-.tc-r{background:linear-gradient(135deg,#c62828,#b71c1c)}
-.tc-b{background:linear-gradient(135deg,#1565c0,#0d47a1)}
-.tc-o{background:linear-gradient(135deg,#e65100,#bf360c)}
-.tc-g{background:linear-gradient(135deg,#2e7d32,#1b5e20)}
+.tcr{background:linear-gradient(135deg,#c62828,#b71c1c)}
+.tcb{background:linear-gradient(135deg,#1565c0,#0d47a1)}
+.tco{background:linear-gradient(135deg,#e65100,#bf360c)}
+.tcg{background:linear-gradient(135deg,#2e7d32,#1b5e20)}
 .trow{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;gap:10px}
-.tnm{font-size:20px;font-weight:900;color:#fff}
-.tmr{font-size:15px;color:rgba(255,255,255,0.75);margin-top:3px;font-weight:700}
-.tkm{font-size:20px;font-weight:900;color:#fff;text-align:right}
-.bar{background:rgba(0,0,0,0.3);border-radius:6px;height:14px;overflow:hidden;margin-bottom:8px}
+.tnm{font-size:19px;font-weight:900;color:#fff}
+.tmr{font-size:14px;color:rgba(255,255,255,0.75);margin-top:3px;font-weight:700}
+.tkm{font-size:19px;font-weight:900;color:#fff;text-align:right}
+.bar{background:rgba(0,0,0,0.3);border-radius:6px;height:13px;overflow:hidden;margin-bottom:8px}
 .barf{height:100%;border-radius:6px;background:rgba(255,255,255,0.9)}
-.bari{display:flex;justify-content:space-between;font-size:15px;color:rgba(255,255,255,0.85);font-weight:700}
+.bari{display:flex;justify-content:space-between;font-size:14px;color:rgba(255,255,255,0.85);font-weight:700}
 .vazio{text-align:center;padding:3rem 1rem}
-.vazio .vt{font-size:24px;font-weight:900;color:#546e7a;margin-bottom:10px}
-.vazio .vs{font-size:19px;color:#455a64;font-weight:700}
-.div{height:1px;background:rgba(255,255,255,0.1);margin:8px 0 22px}
+.vazio .vt{font-size:22px;font-weight:900;color:#546e7a;margin-bottom:10px}
+.vazio .vs{font-size:18px;color:#455a64;font-weight:700}
+.divl{height:1px;background:rgba(255,255,255,0.1);margin:16px 0}
+/* RELATORIO */
+.rel-bloco{margin-bottom:16px}
+.rel-titulo{font-size:13px;text-transform:uppercase;letter-spacing:0.8px;font-weight:900;color:rgba(255,255,255,0.6);margin-bottom:8px}
+.rel-texto{font-size:16px;color:#fff;line-height:1.7;font-weight:500}
+.rel-met{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:16px}
+.rel-met-n{color:rgba(255,255,255,0.75)}
+.rel-met-v{font-weight:900}
+.rv-o{color:#00e676}
+.rv-b{color:#64b5f6}
+.rv-a{color:#ff9800}
+.rel-item{font-size:16px;margin-bottom:6px;line-height:1.5}
+.ri-pos{color:#00e676}
+.ri-att{color:#ff9800}
+.rel-rec{background:rgba(21,101,192,0.3);border-radius:12px;padding:14px;font-size:16px;color:#90caf9;line-height:1.7;border:1px solid #1565c0}
+.canela-box{display:flex;align-items:center;gap:10px;background:rgba(0,0,0,0.2);border-radius:10px;padding:12px 14px;margin-bottom:14px}
+.canela-v{font-size:17px;font-weight:900}
+.cok{color:#00e676}
+.cwn{color:#ff9800}
+.cer{color:#f44336}
+/* CHAT */
+.chat-area{display:flex;flex-direction:column;height:100%}
+.chat-msgs{flex:1;overflow-y:auto;padding:16px;-webkit-overflow-scrolling:touch}
+.msg-wrap{display:flex;flex-direction:column;margin-bottom:12px}
+.msg-wrap.u{align-items:flex-end}
+.msg-wrap.b{align-items:flex-start}
+.msg-bub{max-width:88%;padding:12px 15px;border-radius:14px;font-size:16px;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+.mb-u{background:linear-gradient(135deg,#1565c0,#0d47a1);color:#fff}
+.mb-b{background:#16213e;color:#e0e0e0;border:1px solid #37474f}
+.msg-imgs{font-size:12px;color:#90a4ae;margin-bottom:4px;text-align:right}
+.chat-inp{border-top:2px solid #37474f;padding:12px 14px;background:#16213e;flex-shrink:0}
+.chat-inp-row{display:flex;gap:10px;align-items:flex-end}
+.chat-inp-imgs{display:flex;gap:8px;margin-bottom:10px}
+.ci-th{position:relative}
+.ci-th img{width:52px;height:52px;object-fit:cover;border-radius:8px;border:2px solid #e91e63}
+.ci-del{position:absolute;top:-5px;right:-5px;width:18px;height:18px;border-radius:9px;border:none;background:#f44336;cursor:pointer;font-size:11px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center}
+.ci-btn{border:2px solid #37474f;border-radius:10px;padding:12px;background:#0f3460;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px}
+.ci-send{border:2px solid #1565c0;border-radius:10px;padding:12px 16px;background:linear-gradient(135deg,#1565c0,#0d47a1);cursor:pointer;flex-shrink:0;font-size:22px;display:flex;align-items:center;justify-content:center}
+.ci-send:disabled{opacity:0.35}
+.ci-ta{flex:1;border-radius:10px;border:2px solid #37474f;padding:12px 14px;font-size:17px;font-family:inherit;background:#0f3460;color:#fff;resize:none;outline:none;margin-bottom:0}
+.ci-ta:focus{border-color:#e91e63}
+.sugg{display:block;width:100%;margin:8px 0;padding:14px 16px;border:2px solid #37474f;border-radius:13px;background:#16213e;cursor:pointer;font-size:17px;font-family:inherit;color:#90a4ae;text-align:left}
+.spin{display:inline-block;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.loading-msg{display:flex;align-items:center;gap:10px;color:#90a4ae;padding:8px 0;font-size:16px}
+/* CONFIG */
+.cfg{padding:16px 16px 100px}
+.cfg-t{font-size:26px;font-weight:900;color:#fff;margin-bottom:8px}
+.cfg-sub{font-size:16px;color:#90a4ae;line-height:1.6;margin-bottom:20px}
 </style>
 </head>
 <body>
 <div id="A">
   <div class="nav" id="nav"></div>
-  <div class="scroll" id="scroll"></div>
+  <div id="main" style="flex:1;overflow:hidden;display:flex;flex-direction:column"></div>
 </div>
 <script>
+var SYS="Voce e o assistente de treino do Dimas Junho (43 anos, Joao Pessoa-PB). Responda sempre em portugues brasileiro de forma direta e pratica.\n\nSAUDE: Hipertensao (Olmesartana 20mg/dia - pressao >160/100 = nao treina). Trombofilia (Aspirina 81mg/dia - meias de compressao em longoes >7km). Periostite tibial bilateral (2 episodios 2026) - gelo 10min apos Boston 13 SEMPRE. 87kg/1,75m, meta 75-78kg, dieta nutricionista Camilla Bonifacio.\n\nPLANO 16 SEMANAS (mai-set 2026): Semana normal: Terca=Dia1 intervalado / Sexta=Dia2 longao. Semana de viagem (seg JP->CG, ter CG->Catole): Quarta Catole=Dia1 / Quinta=caminhada / Domingo JP=Dia2.\n\nTENIS: Boston 13->Dia1 sempre+gelo. Glycerin Max->Dia2 semanas impares+recuperacao. NB FuelCell SC Trainer V3->Dia2 semanas pares a partir Sem6. Nimbus 26->reserva. VO2 max: 39,4.\n\nQuando analisar treino: seja extremamente detalhado. Avalie metricas (FC, cadencia, pace, oscilacao, assimetria, VO2), canelas, joelhos, biomecânica, fadiga, clima e recomende o proximo treino com clareza.";
+
 var SD2={1:0,2:0,3:0,4:0,5:0,6:1,7:0,8:1,9:0,10:0,11:0,12:1,13:0,14:1,15:0,16:1};
 var PL=[
  {w:1,per:"18-24 mai",ph:"Fase 1 - Base",rc:0,d1:{t:"Intervalado 4x400m",p:"6:20/km",tip:"4 tiros | rec. 2min | Gelo apos"},d2:{t:"Longo suave 5 km",p:"7:00-7:30/km",tip:"Ritmo de conversa | meias"}},
@@ -126,26 +179,36 @@ var PL=[
  {w:16,per:"31 ago-06 set",ph:"Fase 4 - Objetivo Final",rc:0,d1:{t:"Intervalado 4x800m",p:"5:55/km",tip:"Volume reduz | Gelo apos"},d2:{t:"10 KM CONFORTAVEL",p:"6:40-7:00/km",tip:"SC Trainer | OBJETIVO!"}}
 ];
 var TEN=[
-  {key:"boston13",n:"Boston 13",m:"Adidas",max:600,cl:"tc-r"},
-  {key:"glycerinMax",n:"Glycerin Max",m:"Brooks",max:900,cl:"tc-b"},
-  {key:"nimbus26",n:"Nimbus 26",m:"Asics",max:900,cl:"tc-o"},
-  {key:"scTrainer",n:"SC Trainer V3",m:"New Balance",max:500,cl:"tc-g"}
+  {key:"boston13",n:"Boston 13",m:"Adidas",max:600,cl:"tcr"},
+  {key:"glycerinMax",n:"Glycerin Max",m:"Brooks",max:900,cl:"tcb"},
+  {key:"nimbus26",n:"Nimbus 26",m:"Asics",max:900,cl:"tco"},
+  {key:"scTrainer",n:"SC Trainer V3",m:"New Balance",max:500,cl:"tcg"}
 ];
 var SNM={boston13:"Boston 13",glycerinMax:"Glycerin Max",nimbus26:"Nimbus 26",scTrainer:"SC Trainer V3"};
-var S={tab:"home",w:1,tv:false,tr:[],km:{boston13:0,glycerinMax:0,nimbus26:0,scTrainer:0},dia:"1",imgs:[],notas:"",dist:"",ck:{}};
+
+var S={
+  tab:"home",w:1,tv:false,
+  tr:[],km:{boston13:0,glycerinMax:0,nimbus26:0,scTrainer:0},
+  dia:"1",imgs:[],notas:"",dist:"",ck:{},
+  relatorio:null,carregando:false,
+  chat:[],chatImgs:[],chatInp:"",chatLoad:false,
+  apiKey:""
+};
 
 function load(){
   try{S.w=parseInt(localStorage.getItem("w"))||1;}catch(e){}
   try{S.tv=localStorage.getItem("tv")==="1";}catch(e){}
   try{S.tr=JSON.parse(localStorage.getItem("tr")||"[]");}catch(e){}
   try{S.km=Object.assign({boston13:0,glycerinMax:0,nimbus26:0,scTrainer:0},JSON.parse(localStorage.getItem("km")||"{}"));}catch(e){}
+  try{S.chat=JSON.parse(localStorage.getItem("ch")||"[]");}catch(e){}
+  try{S.apiKey=localStorage.getItem("ak")||"";}catch(e){}
 }
 function sv(k,v){try{localStorage.setItem(k,typeof v==="string"?v:JSON.stringify(v));}catch(e){}}
 function setTab(t){S.tab=t;render();}
 function chSem(d){var n=S.w+d;if(n<1||n>16)return;S.w=n;sv("w",n);render();}
 function togVi(){S.tv=!S.tv;sv("tv",S.tv?"1":"0");render();}
 function togCk(id){S.ck[id]=!S.ck[id];render();}
-function setDia(d){S.dia=d;render();}
+function setDia(d){S.dia=d;S.relatorio=null;render();}
 function addI(inp){
   Array.from(inp.files).forEach(function(f){
     var r=new FileReader();
@@ -154,27 +217,70 @@ function addI(inp){
   });
 }
 function rmImg(i){S.imgs.splice(i,1);render();}
+function addCI(inp){
+  Array.from(inp.files).forEach(function(f){
+    var r=new FileReader();
+    r.onload=function(e){S.chatImgs.push(e.target.result);render();};
+    r.readAsDataURL(f);
+  });
+}
+function rmCI(i){S.chatImgs.splice(i,1);render();}
 
-function analisar(){
+function salvarChave(){
+  var inp=document.getElementById("inp-ak");
+  if(!inp)return;
+  S.apiKey=inp.value.trim();
+  sv("ak",S.apiKey);
+  alert("Chave salva com sucesso!");
+  render();
+}
+
+async function analisarTreino(){
+  if(!S.apiKey){alert("Configure sua chave de API na aba CONFIG primeiro.");return;}
   var pl=PL[S.w-1];var isSC=SD2[S.w]===1;
   var ten=S.dia==="1"?"Boston 13":(isSC?"NB FuelCell SC Trainer V3":"Glycerin Max");
   var di=S.dia==="1"?pl.d1:pl.d2;
   var day=S.dia==="1"?(S.tv?"Quarta (Catole do Rocha)":"Terca (Joao Pessoa)"):(S.tv?"Domingo (Joao Pessoa)":"Sexta (Joao Pessoa)");
-  var msg="[REGISTRO DE TREINO]\nSemana "+S.w+" | Dia "+S.dia+" | "+new Date().toLocaleDateString("pt-BR")+"\nDia: "+day+"\nTreino: "+di.t+" - Pace "+di.p+"\nTenis: "+ten+"\nDistancia: "+(S.dist||"nao informada")+" km\n"+(S.notas?"Obs: "+S.notas+"\n":"")+"\nCopie e cole no chat do Claude (claude.ai) para obter a analise completa.";
-  if(navigator.clipboard){
-    navigator.clipboard.writeText(msg).then(function(){alert("Texto copiado! Cole no chat do Claude em claude.ai");}).catch(function(){alert(msg);});
-  } else {alert(msg);}
+  S.carregando=true;S.relatorio=null;render();
+  try{
+    var content=[];
+    S.imgs.forEach(function(img){
+      var parts=img.split(",");
+      var mime=parts[0].match(/data:(.*);/)[1];
+      content.push({type:"image",source:{type:"base64",media_type:mime,data:parts[1]}});
+    });
+    content.push({type:"text",text:"Analise COMPLETA e DETALHADA deste treino do Dimas:\n\nSemana "+S.w+" | Dia "+S.dia+" | "+new Date().toLocaleDateString("pt-BR")+"\nDia da semana: "+day+"\nTreino prescrito: "+di.t+" - Pace alvo: "+di.p+"\nTenis usado: "+ten+"\nDistancia percorrida: "+(S.dist||"nao informada")+"km\nObservacoes do Dimas: "+(S.notas||"nenhuma")+"\n\nGere o relatorio em JSON com esta estrutura exata:\n{\"resumo\":\"2-3 frases resumindo o treino\",\"metricas\":[{\"n\":\"nome metrica\",\"v\":\"valor\",\"av\":\"otimo|bom|atencao\"}],\"canelas\":\"sem_dor|leve_desconforto|dor\",\"gelo\":true,\"positivos\":[\"ponto positivo 1\",\"ponto positivo 2\"],\"atencao\":[\"ponto de atencao 1\"],\"analise_detalhada\":\"analise longa e detalhada com tudo que observou nas imagens, biomecânica, FC, cadencia, pace, comparacao com treinos anteriores, efeito do calor de JP, estado das canelas, fadiga muscular\",\"proximo_treino\":\"descricao detalhada do que fazer no proximo treino, pace, distancia, tenis, gelo, alongamentos\"}\nRESPONDA SOMENTE COM O JSON SEM MARKDOWN."});
+    var resp=await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","x-api-key":S.apiKey,"anthropic-version":"2023-06-01"},
+      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:2000,system:SYS,messages:[{role:"user",content:content}]})
+    });
+    var data=await resp.json();
+    if(data.error)throw new Error(data.error.message);
+    var txt=data.content[0].text.replace(/```json|```/g,"").trim();
+    S.relatorio=JSON.parse(txt);
+  }catch(err){
+    S.relatorio={resumo:"Erro: "+err.message,metricas:[],canelas:"sem_dor",gelo:false,positivos:[],atencao:[],analise_detalhada:"Tente novamente.",proximo_treino:""};
+  }
+  S.carregando=false;render();
 }
 
 function salvarTreino(){
   var isSC=SD2[S.w]===1;
   var sk=S.dia==="1"?"boston13":(isSC?"scTrainer":"glycerinMax");
-  var wo={w:S.w,d:S.dia,sk:sk,km:parseFloat(S.dist)||0,dt:new Date().toLocaleDateString("pt-BR"),can:"sem_dor",res:""};
+  var wo={
+    w:S.w,d:S.dia,sk:sk,
+    km:parseFloat(S.dist)||0,
+    dt:new Date().toLocaleDateString("pt-BR"),
+    can:S.relatorio?S.relatorio.canelas:"sem_dor",
+    res:S.relatorio?S.relatorio.resumo:"",
+    rel:S.relatorio||null
+  };
   S.tr.unshift(wo);sv("tr",S.tr);
   var k=Object.assign({},S.km);
   if(sk&&wo.km>0)k[sk]=(k[sk]||0)+wo.km;
   S.km=k;sv("km",k);
-  S.imgs=[];S.notas="";S.dist="";
+  S.imgs=[];S.notas="";S.dist="";S.relatorio=null;
   fazerBackupAuto();
   alert("Treino salvo! Backup gerado automaticamente.");
   setTab("hist");
@@ -189,96 +295,186 @@ function fazerBackupAuto(){
     var a=document.createElement("a");
     a.href=url;
     a.download="backup_treino_"+new Date().toLocaleDateString("pt-BR").replace(/\//g,"-")+".json";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
     URL.revokeObjectURL(url);
   }catch(e){console.log("Backup erro:",e);}
 }
 
 function fazerBackupManual(){
   fazerBackupAuto();
-  alert("Backup salvo! Guarde o arquivo no Google Drive ou WhatsApp.");
+  alert("Backup salvo! Guarde no Google Drive ou WhatsApp.");
 }
 
-function abrirRestaurar(){
-  document.getElementById("finp-backup").click();
-}
+function abrirRestaurar(){document.getElementById("finp-bk").click();}
 
 function restaurarBackup(inp){
-  var file=inp.files[0];
-  if(!file)return;
+  var file=inp.files[0];if(!file)return;
   var r=new FileReader();
   r.onload=function(e){
     try{
-      var dados=JSON.parse(e.target.result);
-      if(dados.tr!==undefined){
-        S.w=dados.w||1;
-        S.tv=dados.tv||false;
-        S.tr=dados.tr||[];
-        S.km=Object.assign({boston13:0,glycerinMax:0,nimbus26:0,scTrainer:0},dados.km||{});
+      var d=JSON.parse(e.target.result);
+      if(d.tr!==undefined){
+        S.w=d.w||1;S.tv=d.tv||false;S.tr=d.tr||[];
+        S.km=Object.assign({boston13:0,glycerinMax:0,nimbus26:0,scTrainer:0},d.km||{});
         sv("w",S.w);sv("tv",S.tv?"1":"0");sv("tr",S.tr);sv("km",S.km);
-        alert("Backup restaurado! "+S.tr.length+" treino(s) recuperado(s).");
-        render();
-      } else {
-        alert("Arquivo invalido. Selecione um backup valido.");
-      }
-    }catch(err){alert("Erro ao ler arquivo: "+err.message);}
+        alert("Backup restaurado! "+S.tr.length+" treino(s) recuperado(s).");render();
+      }else{alert("Arquivo invalido.");}
+    }catch(err){alert("Erro: "+err.message);}
   };
   r.readAsText(file);
 }
 
 function xpdf(i){
   var wo=S.tr[i];if(!wo)return;
+  var rel=wo.rel||null;
   var w=window.open("","_blank");
   if(!w){alert("Permita pop-ups para exportar PDF.");return;}
-  w.document.write("<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Relatorio "+wo.dt+"</title><style>body{font-family:Arial,sans-serif;max-width:600px;margin:40px auto;padding:0 24px;font-size:16px;color:#111}h1{font-size:26px;font-weight:800}p.sub{color:#666;font-size:14px;margin:6px 0 24px}.box{background:#f5f5f5;border-radius:8px;padding:16px;line-height:1.7}.ft{font-size:12px;color:#bbb;margin-top:32px;padding-top:12px;border-top:1px solid #eee}</style></head><body><h1>Relatorio de Treino</h1><p class='sub'>Semana "+wo.w+" - Dia "+wo.d+" - "+wo.dt+(wo.km>0?" - "+wo.km+"km":"")+(wo.sk?" - "+SNM[wo.sk]:"")+"</p><div class='box'>"+(wo.res||"Treino registrado.")+"</div><p class='ft'>Plano Emagrecimento + 10km - Dimas Junho - "+wo.dt+"</p><scr"+"ipt>window.onload=function(){setTimeout(function(){window.print()},400)}<\/scr"+"ipt></body></html>");
+  var corpo="<h1>Relatorio de Treino</h1><p class='sub'>Semana "+wo.w+" - Dia "+wo.d+" - "+wo.dt+(wo.km>0?" - "+wo.km+"km":"")+(wo.sk?" - "+SNM[wo.sk]:"")+"</p>";
+  if(rel){
+    corpo+="<div class='box'><b>Resumo</b><br>"+rel.resumo+"</div>";
+    if(rel.metricas&&rel.metricas.length){
+      corpo+="<div class='sl'>Metricas</div>";
+      rel.metricas.forEach(function(m){corpo+="<div class='row'><span>"+m.n+"</span><span class='rv'>"+m.v+"</span></div>";});
+    }
+    if(rel.analise_detalhada){corpo+="<div class='sl'>Analise Detalhada</div><div class='box'>"+rel.analise_detalhada+"</div>";}
+    if(rel.positivos&&rel.positivos.length){corpo+="<div class='sl'>Pontos Positivos</div>"+rel.positivos.map(function(p){return "<p class='pos'>+ "+p+"</p>";}).join("");}
+    if(rel.atencao&&rel.atencao.length){corpo+="<div class='sl'>Pontos de Atencao</div>"+rel.atencao.map(function(p){return "<p class='att'>! "+p+"</p>";}).join("");}
+    if(rel.proximo_treino){corpo+="<div class='sl'>Proximo Treino</div><div class='rec'>"+rel.proximo_treino+"</div>";}
+  }else{
+    corpo+="<div class='box'>"+(wo.res||"Treino registrado.")+"</div>";
+  }
+  w.document.write("<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Relatorio "+wo.dt+"</title><style>body{font-family:Arial,sans-serif;max-width:620px;margin:40px auto;padding:0 24px;font-size:15px;color:#111}h1{font-size:24px;font-weight:800;margin-bottom:4px}.sub{color:#666;font-size:14px;margin-bottom:24px}.box{background:#f5f5f5;border-radius:8px;padding:14px;font-size:15px;line-height:1.7;margin-bottom:14px}.sl{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#999;font-weight:800;margin:18px 0 8px}.row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eee;font-size:14px}.rv{font-weight:800}.pos{color:#2e7d32;font-size:15px;margin-bottom:5px}.att{color:#e65100;font-size:15px;margin-bottom:5px}.rec{background:#e3f2fd;border-radius:8px;padding:14px;font-size:15px;color:#1a5276;line-height:1.7}.ft{font-size:11px;color:#bbb;margin-top:32px;padding-top:12px;border-top:1px solid #eee}</style></head><body>"+corpo+"<p class='ft'>Plano Emagrecimento + 10km - Dimas Junho - "+wo.dt+"</p><scr"+"ipt>window.onload=function(){setTimeout(function(){window.print()},400)}<\/scr"+"ipt></body></html>");
   w.document.close();
 }
+
+async function enviarChat(){
+  var ta=document.getElementById("ci-ta");
+  var txt=ta?ta.value.trim():S.chatInp.trim();
+  if(!txt&&!S.chatImgs.length)return;
+  if(!S.apiKey){alert("Configure sua chave de API na aba CONFIG primeiro.");return;}
+  S.chatLoad=true;
+  var content=[];
+  S.chatImgs.forEach(function(img){
+    var parts=img.split(",");
+    var mime=parts[0].match(/data:(.*);/)[1];
+    content.push({type:"image",source:{type:"base64",media_type:mime,data:parts[1]}});
+  });
+  if(txt)content.push({type:"text",text:txt});
+  var um={role:"user",content:content,text:txt,ni:S.chatImgs.length};
+  S.chat.push(um);S.chatInp="";S.chatImgs=[];
+  sv("ch",S.chat.slice(-60));render();
+  try{
+    var msgs=S.chat.map(function(m){return {role:m.role,content:m.content||[{type:"text",text:m.text||""}]};});
+    var resp=await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","x-api-key":S.apiKey,"anthropic-version":"2023-06-01"},
+      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1500,system:SYS,messages:msgs})
+    });
+    var data=await resp.json();
+    if(data.error)throw new Error(data.error.message);
+    var rtxt=data.content.filter(function(c){return c.type==="text";}).map(function(c){return c.text;}).join("\n");
+    S.chat.push({role:"assistant",content:[{type:"text",text:rtxt}],text:rtxt});
+    sv("ch",S.chat.slice(-60));
+  }catch(err){
+    S.chat.push({role:"assistant",content:[{type:"text",text:"Erro: "+err.message}],text:"Erro: "+err.message});
+  }
+  S.chatLoad=false;render();
+  setTimeout(function(){var cm=document.getElementById("chat-msgs");if(cm)cm.scrollTop=cm.scrollHeight;},100);
+}
+
+function setSugg(txt){
+  S.chatInp=txt;render();
+  setTimeout(function(){var ta=document.getElementById("ci-ta");if(ta){ta.focus();ta.value=txt;}},100);
+}
+
+function chatEnter(ev){if(ev.key==="Enter"&&!ev.shiftKey){ev.preventDefault();enviarChat();}}
 
 function render(){
   var pl=PL[S.w-1];var isSC=SD2[S.w]===1;
   var d1day=S.tv?"Quarta (Catole)":"Terca (JP)";
   var d2day=S.tv?"Domingo (JP)":"Sexta (JP)";
   var d2ten=isSC?"SC Trainer V3 (New Balance)":"Glycerin Max (Brooks)";
-  var tabs=[["home","INICIO"],["reg","REGISTRO"],["hist","HISTORICO"],["shoes","TENIS"],["backup","BACKUP"]];
+  var tabs=[["home","INICIO"],["reg","REGISTRO"],["hist","HISTORICO"],["shoes","TENIS"],["chat","CHAT"],["bkp","BACKUP"],["cfg","CONFIG"]];
 
   document.getElementById("nav").innerHTML=
     "<div class='nav-h'><div><h1>Semana "+S.w+"</h1><div class='fa'>"+pl.ph+"</div></div>"+(pl.rc?"<span class='rec-tag'>Recuperacao</span>":"")+"</div>"+
     "<div class='tabs'>"+tabs.map(function(t){return "<button class='tb "+(S.tab===t[0]?"on":"")+"' onclick='setTab(\""+t[0]+"\")'>"+t[1]+"</button>";}).join("")+"</div>";
 
+  var main=document.getElementById("main");
+
+  // ── CHAT (layout especial sem scroll externo) ──────────────
+  if(S.tab==="chat"){
+    var suggs=["Como estao as minhas canelas apos o treino?","Devo treinar amanha?","Explica o treino da proxima semana","O que comer antes do treino noturno?"];
+    var msgsH="";
+    if(!S.chat.length){
+      msgsH="<div style='text-align:center;padding:2rem 1rem;color:#546e7a'><div style='font-size:44px;margin-bottom:12px'>&#128172;</div><p style='font-size:20px;font-weight:700;color:#90a4ae;margin-bottom:6px'>Ola, Dimas!</p><p style='font-size:17px;margin-bottom:20px;color:#546e7a'>Dores, duvidas ou orientacoes sobre o treino</p>"+
+      suggs.map(function(s){return "<button class='sugg' onclick='setSugg(\""+s+"\")'>" +s+"</button>";}).join("")+"</div>";
+    }else{
+      msgsH=S.chat.map(function(m){
+        return "<div class='msg-wrap "+(m.role==="user"?"u":"b")+"'>"+(m.ni>0?"<p class='msg-imgs'>&#128247; "+m.ni+" imagem(ns)</p>":"")+"<div class='msg-bub "+(m.role==="user"?"mb-u":"mb-b")+"'>"+m.text+"</div></div>";
+      }).join("")+(S.chatLoad?"<div class='loading-msg'><span class='spin'>&#8635;</span> Analisando...</div>":"");
+    }
+    var ciImgsH=S.chatImgs.length?"<div class='chat-inp-imgs'>"+S.chatImgs.map(function(_,i){return "<div class='ci-th'><img id='cith"+i+"'><button class='ci-del' onclick='rmCI("+i+")'>x</button></div>";}).join("")+"</div>":"";
+    main.innerHTML="<div class='chat-area'><div class='chat-msgs' id='chat-msgs'>"+msgsH+"</div><div class='chat-inp'>"+ciImgsH+"<div class='chat-inp-row'><button class='ci-btn' onclick='document.getElementById(\"ci-fi\").click()'>&#128247;</button><input type='file' id='ci-fi' accept='image/*' multiple style='display:none' onchange='addCI(this)'><textarea class='ci-ta' id='ci-ta' rows='2' placeholder='Mensagem...' onkeydown='chatEnter(event)' oninput='S.chatInp=this.value'>"+S.chatInp+"</textarea><button class='ci-send' onclick='enviarChat()' "+(S.chatLoad||(!S.chatInp.trim()&&!S.chatImgs.length)?"disabled":"")+" >&#10148;</button></div></div></div>";
+    S.chatImgs.forEach(function(_,i){var el=document.getElementById("cith"+i);if(el)el.src=S.chatImgs[i];});
+    setTimeout(function(){var cm=document.getElementById("chat-msgs");if(cm)cm.scrollTop=cm.scrollHeight;},50);
+    return;
+  }
+
+  // ── OUTRAS ABAS (com scroll) ───────────────────────────────
+  main.innerHTML="<div class='scroll' id='scroll'></div>";
   var H="";
 
   if(S.tab==="home"){
     var cks=[["c0","Pressao menor que 150/90 mmHg"],["c1","Hidratacao: 400-500ml antes"],["c2","Tenis correto separado"],["c3","Gelo preparado para apos"],["c4","Meias de compressao (acima de 7km)"]];
     H="<div class='pg'>"+
     "<div class='semn'><button class='nb' onclick='chSem(-1)' "+(S.w===1?"disabled style='opacity:0.3'":"")+">&lt;</button><div class='mid'><div class='m1'>Sem "+S.w+" de 16</div><div class='m2'>"+pl.per+"</div></div><button class='nb' onclick='chSem(1)' "+(S.w===16?"disabled style='opacity:0.3'":"")+">&gt;</button></div>"+
-    "<div class='card-viagem'><div class='tog-wrap'><div style='flex:1'><p style='font-size:22px;font-weight:900;color:#fff;margin-bottom:6px'>Semana de viagem?</p><p style='font-size:16px;color:#90caf9;font-weight:700'>"+(S.tv?"Qua (Catole) + Dom (JP)":"Ter + Sex em JP")+"</p></div><button class='tog "+(S.tv?"sim":"nao")+"' onclick='togVi()'>"+(S.tv?"SIM":"NAO")+"</button></div></div>"+
-    "<div class='card-d1'><span class='lbl'>DIA 1 - "+d1day+"</span><p class='h3'>"+pl.d1.t+"</p><p class='sub'>Pace: "+pl.d1.p+"</p><div class='cg-claro'><p class='ten-nome'>Boston 13 (Adidas)</p><p class='tip'>"+pl.d1.tip+"</p></div></div>"+
-    "<div class='"+(isSC?"card-d2-g":"card-d2-b")+"'><span class='lbl'>DIA 2 - "+d2day+"</span><p class='h3'>"+pl.d2.t+"</p><p class='sub'>Pace: "+pl.d2.p+"</p><div class='cg-claro'><p class='ten-nome'>"+d2ten+"</p><p class='tip'>"+pl.d2.tip+"</p></div></div>"+
-    "<div class='card-ck'><p style='font-size:22px;font-weight:900;color:#fff;margin-bottom:12px'>Checklist pre-treino</p>"+
-    cks.map(function(c){return "<div class='ck' onclick='togCk(\""+c[0]+"\")'><div class='ckb "+(S.ck[c[0]]?"on":"off")+"'>"+(S.ck[c[0]]?"V":"")+"</div><span class='ckt "+(S.ck[c[0]]?"on":"")+"'>"+c[1]+"</span></div>";}).join("")+
-    "</div></div>";
+    "<div class='cv'><div class='togw'><div style='flex:1'><p style='font-size:21px;font-weight:900;color:#fff;margin-bottom:6px'>Semana de viagem?</p><p style='font-size:15px;color:#90caf9;font-weight:700'>"+(S.tv?"Qua (Catole) + Dom (JP)":"Ter + Sex em JP")+"</p></div><button class='tog "+(S.tv?"sim":"nao")+"' onclick='togVi()'>"+(S.tv?"SIM":"NAO")+"</button></div></div>"+
+    "<div class='cd1'><span class='lbl'>DIA 1 - "+d1day+"</span><p class='h3'>"+pl.d1.t+"</p><p class='sub'>Pace: "+pl.d1.p+"</p><div class='cg'><p class='tnome'>Boston 13 (Adidas)</p><p class='tip'>"+pl.d1.tip+"</p></div></div>"+
+    "<div class='"+(isSC?"cd2g":"cd2b")+"'><span class='lbl'>DIA 2 - "+d2day+"</span><p class='h3'>"+pl.d2.t+"</p><p class='sub'>Pace: "+pl.d2.p+"</p><div class='cg'><p class='tnome'>"+d2ten+"</p><p class='tip'>"+pl.d2.tip+"</p></div></div>"+
+    "<div class='cck'><p style='font-size:21px;font-weight:900;color:#fff;margin-bottom:12px'>Checklist pre-treino</p>"+
+    cks.map(function(c){return "<div class='ck' onclick='togCk(\""+c[0]+"\")'><div class='ckb "+(S.ck[c[0]]?"on":"off")+"'>"+(S.ck[c[0]]?"V":"")+"</div><span class='ckt "+(S.ck[c[0]]?"on":"")+"'>"+c[1]+"</span></div>";}).join("")+"</div></div>";
   }
 
   else if(S.tab==="reg"){
     var di=S.dia==="1"?pl.d1:pl.d2;
     var tenLabel=S.dia==="1"?"Boston 13 (Adidas)":(isSC?"SC Trainer V3 (New Balance)":"Glycerin Max (Brooks)");
-    var podeEnv=S.notas.trim().length>0||S.imgs.length>0;
+    var temChave=!!S.apiKey;
+    var podeAn=(S.notas.trim().length>0||S.imgs.length>0)&&temChave;
+    var relH="";
+    if(S.carregando){
+      relH="<div style='text-align:center;padding:2rem;color:#90caf9;font-size:18px;font-weight:700'><div class='spin' style='font-size:32px;display:block;margin-bottom:12px'>&#8635;</div>Analisando o treino com Claude...</div>";
+    } else if(S.relatorio){
+      var r=S.relatorio;
+      var cc={sem_dor:"cok",leve_desconforto:"cwn",dor:"cer"};
+      var cl={sem_dor:"Sem dor",leve_desconforto:"Leve desconforto",dor:"Com dor"};
+      relH="<div class='crel'>"+
+        "<p style='font-size:20px;font-weight:900;color:#fff;margin-bottom:16px'>Relatorio Completo</p>"+
+        "<div class='rel-bloco'><div class='rel-titulo'>Resumo</div><div class='rel-texto'>"+r.resumo+"</div></div>"+
+        (r.metricas&&r.metricas.length?"<div class='rel-bloco'><div class='rel-titulo'>Metricas</div>"+r.metricas.map(function(m){var vc=m.av==="otimo"?"rv-o":m.av==="bom"?"rv-b":"rv-a";return "<div class='rel-met'><span class='rel-met-n'>"+m.n+"</span><span class='rel-met-v "+vc+"'>"+m.v+"</span></div>";}).join("")+"</div>":"")+
+        "<div class='canela-box'><span style='font-size:16px;color:rgba(255,255,255,0.75)'>Canelas:</span><span class='canela-v "+(cc[r.canelas]||"cok")+"'>"+(cl[r.canelas]||r.canelas)+"</span>"+(r.gelo?"<span style='font-size:15px;color:#64b5f6;margin-left:auto'>Gelo!</span>":"")+"</div>"+
+        (r.positivos&&r.positivos.length?"<div class='rel-bloco'><div class='rel-titulo'>Pontos Positivos</div>"+r.positivos.map(function(p){return "<p class='rel-item ri-pos'>+ "+p+"</p>";}).join("")+"</div>":"")+
+        (r.atencao&&r.atencao.length?"<div class='rel-bloco'><div class='rel-titulo'>Pontos de Atencao</div>"+r.atencao.map(function(p){return "<p class='rel-item ri-att'>! "+p+"</p>";}).join("")+"</div>":"")+
+        (r.analise_detalhada?"<div class='rel-bloco'><div class='rel-titulo'>Analise Detalhada</div><div class='rel-texto'>"+r.analise_detalhada+"</div></div>":"")+
+        (r.proximo_treino?"<div class='rel-bloco'><div class='rel-titulo'>Proximo Treino</div><div class='rel-rec'>"+r.proximo_treino+"</div></div>":"")+
+        "<button class='btn bvd' onclick='salvarTreino()'>SALVAR ESTE TREINO</button>"+
+      "</div>";
+    }
     H="<div class='pg'><p class='h2'>Registrar treino</p>"+
-    "<div class='card-aviso'><p style='font-size:17px;font-weight:700;color:#90caf9;line-height:1.6'>Preencha os dados e clique em GERAR RESUMO. Copie e cole no chat do Claude para obter o relatorio!</p></div>"+
+    (!temChave?"<div class='cal'><p style='font-size:16px;font-weight:700;color:#ffcc80;line-height:1.6'>Configure sua chave de API na aba CONFIG para ativar analise com Claude.</p></div>":"")+
     "<div class='dsels'>"+
-      "<button class='dsel "+(S.dia==="1"?"on-r":"")+"' onclick='setDia(\"1\")'><span class='dn'>DIA 1</span><span class='dd'>"+(S.tv?"Quarta":"Terca")+"</span></button>"+
-      "<button class='dsel "+(S.dia==="2"?"on-b":"")+"' onclick='setDia(\"2\")'><span class='dn'>DIA 2</span><span class='dd'>"+(S.tv?"Domingo":"Sexta")+"</span></button>"+
+      "<button class='dsel "+(S.dia==="1"?"onr":"")+"' onclick='setDia(\"1\")'><span class='dn'>DIA 1</span><span class='dd'>"+(S.tv?"Quarta":"Terca")+"</span></button>"+
+      "<button class='dsel "+(S.dia==="2"?"onb":"")+"' onclick='setDia(\"2\")'><span class='dn'>DIA 2</span><span class='dd'>"+(S.tv?"Domingo":"Sexta")+"</span></button>"+
     "</div>"+
-    "<div class='card-info'><p class='ten-nome'>"+tenLabel+"</p><p class='tip'>"+di.t+" | Pace: "+di.p+"</p></div>"+
-    "<button class='btn btn-foto' onclick='document.getElementById(\"fi\").click()'><span style='font-size:26px'>FOTO</span><span style='font-size:16px'>Adicionar prints do Samsung Health</span></button>"+
+    "<div class='cinf'><p class='tnome'>"+tenLabel+"</p><p class='tip'>"+di.t+" | Pace: "+di.p+"</p></div>"+
+    "<button class='btn bfoto' onclick='document.getElementById(\"fi\").click()'><span style='font-size:24px'>FOTO</span><span style='font-size:15px'>Adicionar prints do Samsung Health</span></button>"+
     "<input type='file' id='fi' accept='image/*' multiple style='display:none' onchange='addI(this)'>"+
     (S.imgs.length?"<div class='imgs'>"+S.imgs.map(function(_,i){return "<div class='imgt'><img id='im"+i+"'><button class='imgd' onclick='rmImg("+i+")'>X</button></div>";}).join("")+"</div>":"")+
     "<input type='number' id='idist' placeholder='Distancia em km' value='"+S.dist+"' oninput='S.dist=this.value' step='0.1'>"+
-    "<textarea id='inotas' rows='4' placeholder='Como foi o treino? Dores, canelas, sensacoes...' oninput='S.notas=this.value'>"+S.notas+"</textarea>"+
-    "<button class='btn btn-az' onclick='analisar()' "+(podeEnv?"":"disabled style='opacity:0.4'")+">&gt;&gt; GERAR RESUMO</button>"+
-    "<button class='btn btn-vd' onclick='salvarTreino()'>&gt;&gt; SALVAR TREINO</button></div>";
+    "<textarea id='inotas' rows='3' placeholder='Como foi o treino? Dores, canelas, sensacoes...' oninput='S.notas=this.value'>"+S.notas+"</textarea>"+
+    "<button class='btn baz' onclick='analisarTreino()' "+(podeAn&&!S.carregando?"":"disabled style='opacity:0.4'")+">"+(S.carregando?"Analisando...":"ANALISAR COM CLAUDE")+"</button>"+
+    "<button class='btn bvd' onclick='salvarTreino()' style='opacity:0.7'>SALVAR SEM ANALISE</button>"+
+    relH+"</div>";
     setTimeout(function(){S.imgs.forEach(function(_,i){var el=document.getElementById("im"+i);if(el)el.src=S.imgs[i];});},50);
   }
 
@@ -289,8 +485,9 @@ function render(){
       var cTag={sem_dor:"tok",leve_desconforto:"twn",dor:"ter"};
       var cLab={sem_dor:"Canelas ok",leve_desconforto:"Leve desconforto",dor:"Com dor"};
       H="<div class='pg'><p class='h2'>Historico</p>"+
-        S.tr.map(function(wo,i){return "<div class='hcard'><div class='hrow'><div style='flex:1'><p class='htit'>Sem "+wo.w+" - Dia "+wo.d+"</p><p class='hsub'>"+wo.dt+(wo.km>0?" | "+wo.km+"km":"")+(wo.sk?" | "+SNM[wo.sk]:"")+"</p></div><span class='tag "+(cTag[wo.can]||"tok")+"'>"+(cLab[wo.can]||"ok")+"</span></div><p class='hres'>"+(wo.res||"Treino registrado.")+"</p><button class='btn btn-az' onclick='xpdf("+i+")'>EXPORTAR PDF</button></div>";}).join("")+
-      "</div>";
+        S.tr.map(function(wo,i){
+          return "<div class='hcard'><div class='hrow'><div style='flex:1'><p class='htit'>Sem "+wo.w+" - Dia "+wo.d+"</p><p class='hsub'>"+wo.dt+(wo.km>0?" | "+wo.km+"km":"")+(wo.sk?" | "+SNM[wo.sk]:"")+"</p></div><span class='tag "+(cTag[wo.can]||"tok")+"'>"+(cLab[wo.can]||"ok")+"</span></div><p class='hres'>"+(wo.res||"Treino registrado.")+"</p><button class='btn baz' style='margin-bottom:8px' onclick='xpdf("+i+")'>EXPORTAR PDF COMPLETO</button></div>";
+        }).join("")+"</div>";
     }
   }
 
@@ -300,23 +497,38 @@ function render(){
         var km=Math.round(S.km[t.key]||0);var pct=Math.min(100,Math.round((km/t.max)*100));
         return "<div class='tcard "+t.cl+"'><div class='trow'><div style='flex:1'><p class='tnm'>"+t.n+"</p><p class='tmr'>"+t.m+"</p></div><p class='tkm'>"+km+" / "+t.max+" km</p></div><div class='bar'><div class='barf' style='width:"+pct+"%'></div></div><div class='bari'><span>"+pct+"% da vida util</span><span>~"+(t.max-km)+" km rest.</span></div></div>";
       }).join("")+
-      "<p style='font-size:15px;color:#546e7a;text-align:center;margin-top:8px;font-weight:700'>Km acumulados ao salvar treinos</p></div>";
+      "<p style='font-size:14px;color:#546e7a;text-align:center;margin-top:8px;font-weight:700'>Km acumulados ao salvar treinos</p></div>";
   }
 
-  else if(S.tab==="backup"){
+  else if(S.tab==="bkp"){
     H="<div class='pg'><p class='h2'>Backup dos Dados</p>"+
-    "<div class='card-aviso'><p style='font-size:17px;font-weight:700;color:#90caf9;line-height:1.6'>O backup e gerado automaticamente ao salvar cada treino. Guarde o arquivo no Google Drive ou WhatsApp para nao perder seus dados.</p></div>"+
-    "<div class='card-info' style='margin-bottom:14px'><p class='ten-nome'>Dados atuais</p><p class='tip'>"+S.tr.length+" treino(s) registrado(s)</p></div>"+
-    "<button class='btn btn-az' onclick='fazerBackupManual()'>FAZER BACKUP AGORA</button>"+
-    "<div class='div'></div>"+
-    "<p style='font-size:19px;font-weight:900;color:#fff;margin-bottom:14px'>Restaurar backup</p>"+
-    "<div class='card-alerta'><p style='font-size:17px;font-weight:700;color:#ffcc80;line-height:1.6'>Atencao: restaurar substitui todos os dados atuais do app!</p></div>"+
-    "<button class='btn btn-am' onclick='abrirRestaurar()'>SELECIONAR ARQUIVO DE BACKUP</button>"+
-    "<input type='file' id='finp-backup' accept='.json' style='display:none' onchange='restaurarBackup(this)'>"+
-    "</div>";
+    "<div class='cav'><p style='font-size:16px;font-weight:700;color:#90caf9;line-height:1.6'>Backup automatico gerado a cada treino salvo. Guarde o arquivo no Google Drive ou WhatsApp.</p></div>"+
+    "<div class='cinf'><p class='tnome'>Dados atuais</p><p class='tip'>"+S.tr.length+" treino(s) registrado(s)</p></div>"+
+    "<button class='btn baz' onclick='fazerBackupManual()'>FAZER BACKUP AGORA</button>"+
+    "<div class='divl'></div>"+
+    "<p style='font-size:18px;font-weight:900;color:#fff;margin-bottom:14px'>Restaurar backup</p>"+
+    "<div class='cal'><p style='font-size:16px;font-weight:700;color:#ffcc80;line-height:1.6'>Atencao: restaurar substitui todos os dados atuais!</p></div>"+
+    "<button class='btn bam' onclick='abrirRestaurar()'>SELECIONAR ARQUIVO DE BACKUP</button>"+
+    "<input type='file' id='finp-bk' accept='.json' style='display:none' onchange='restaurarBackup(this)'></div>";
+  }
+
+  else if(S.tab==="cfg"){
+    H="<div class='cfg'><p class='cfg-t'>Configuracoes</p>"+
+    "<p class='cfg-sub'>Para usar a analise de treino com Claude e o chat, voce precisa de uma chave de API da Anthropic. Acesse console.anthropic.com e crie uma chave gratuita.</p>"+
+    "<div class='cbk'><p style='font-size:17px;font-weight:900;color:#fff;margin-bottom:10px'>Chave de API</p>"+
+    (S.apiKey?"<p style='font-size:15px;color:#00e676;margin-bottom:14px;font-weight:700'>Chave configurada</p>":"<p style='font-size:15px;color:#ff9800;margin-bottom:14px;font-weight:700'>Chave nao configurada</p>")+
+    "<input type='password' id='inp-ak' placeholder='sk-ant-...' value='"+S.apiKey+"'>"+
+    "<button class='btn bvd' onclick='salvarChave()'>SALVAR CHAVE</button></div>"+
+    "<div class='cbk' style='margin-top:0'><p style='font-size:17px;font-weight:900;color:#fff;margin-bottom:10px'>Limpar chat</p><p style='font-size:15px;color:#90a4ae;margin-bottom:14px'>Remove todo o historico de conversa do chat.</p><button class='btn brx' onclick='limparChat()'>LIMPAR HISTORICO DO CHAT</button></div></div>";
   }
 
   document.getElementById("scroll").innerHTML=H;
+}
+
+function limparChat(){
+  if(confirm("Deseja apagar todo o historico do chat?")){
+    S.chat=[];sv("ch",[]);render();
+  }
 }
 
 load();render();

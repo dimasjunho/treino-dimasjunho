@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1a1a2e">
+<title>Treino Dimas</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden}
+#A{font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif;background:#1a1a2e;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+.nav{background:#16213e;border-bottom:4px solid #e91e63;flex-shrink:0}
+.nav-h{padding:20px 18px 14px;display:flex;justify-content:space-between;align-items:center}
+.nav-h h1{font-size:52px;font-weight:900;color:#fff;line-height:1}
+.nav-h .fa{font-size:26px;color:#64b5f6;margin-top:5px;font-weight:700}
+.rec-tag{background:#00e676;color:#003300;padding:10px 18px;border-radius:24px;font-size:22px;font-weight:900;white-space:nowrap}
+.tabs{display:flex;background:#0f3460}
+.tb{flex:1;border:none;border-bottom:5px solid transparent;background:transparent;cursor:pointer;padding:20px 2px 16px;font-family:inherit;font-size:20px;font-weight:900;color:#7986cb}
+.tb.on{color:#fff;border-bottom-color:#e91e63;background:#1a1a4e}
+.scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.pg{padding:20px 20px 40px}
+.card-viagem{background:linear-gradient(135deg,#1565c0,#0d47a1);border-radius:22px;padding:24px;margin-bottom:18px;box-shadow:0 4px 15px rgba(21,101,192,0.5)}
+.card-d1{background:linear-gradient(135deg,#c62828,#b71c1c);border-radius:22px;padding:24px;margin-bottom:18px;box-shadow:0 4px 15px rgba(198,40,40,0.5)}
+.card-d2-b{background:linear-gradient(135deg,#1565c0,#0d47a1);border-radius:22px;padding:24px;margin-bottom:18px;box-shadow:0 4px 15px rgba(21,101,192,0.5)}
+.card-d2-g{background:linear-gradient(135deg,#2e7d32,#1b5e20);border-radius:22px;padding:24px;margin-bottom:18px;box-shadow:0 4px 15px rgba(46,125,50,0.5)}
+.card-ck{background:linear-gradient(135deg,#4a148c,#311b92);border-radius:22px;padding:24px;margin-bottom:18px;box-shadow:0 4px 15px rgba(74,20,140,0.5)}
+.card-info{background:linear-gradient(135deg,#e65100,#bf360c);border-radius:22px;padding:24px;margin-bottom:18px;box-shadow:0 4px 15px rgba(230,81,0,0.5)}
+.card-aviso{background:linear-gradient(135deg,#0d47a1,#1a237e);border-radius:22px;padding:24px;margin-bottom:20px;border:3px solid #42a5f5}
+.cg-claro{background:rgba(255,255,255,0.18);border-radius:14px;padding:18px;margin-top:16px}
+.lbl{font-size:22px;text-transform:uppercase;letter-spacing:1px;font-weight:900;margin-bottom:12px;display:block;color:rgba(255,255,255,0.75)}
+.h2{font-size:50px;font-weight:900;margin-bottom:22px;color:#fff}
+.h3{font-size:42px;font-weight:900;margin-bottom:10px;line-height:1.15;color:#fff}
+.sub{font-size:32px;color:rgba(255,255,255,0.85);margin-bottom:14px;font-weight:700}
+.tip{font-size:28px;color:rgba(255,255,255,0.9);font-weight:600;line-height:1.5}
+.ten-nome{font-size:34px;font-weight:900;color:#fff;margin-bottom:8px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:26px;border-radius:20px;border:none;cursor:pointer;font-size:32px;font-weight:900;font-family:inherit;margin-bottom:18px;box-shadow:0 4px 14px rgba(0,0,0,0.3)}
+.btn:active{opacity:0.7;transform:scale(0.97)}
+.btn-az{background:linear-gradient(135deg,#1565c0,#0d47a1);color:#fff}
+.btn-vd{background:linear-gradient(135deg,#2e7d32,#1b5e20);color:#fff}
+.btn-foto{background:linear-gradient(135deg,#6a1b9a,#4a148c);color:#fff;flex-direction:column;gap:10px;padding:30px;border:none}
+.semn{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.semn .nb{width:82px;height:82px;border-radius:18px;border:none;font-size:42px;font-weight:900;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e91e63,#c2185b);color:#fff;box-shadow:0 4px 12px rgba(233,30,99,0.5)}
+.semn .mid{flex:1;text-align:center;background:linear-gradient(135deg,#0f3460,#16213e);border-radius:18px;padding:16px;border:3px solid #e91e63}
+.semn .mid .m1{font-size:36px;font-weight:900;color:#e91e63}
+.semn .mid .m2{font-size:24px;color:#90caf9;margin-top:5px;font-weight:700}
+.tog{border:none;border-radius:30px;padding:20px 34px;cursor:pointer;font-size:30px;font-weight:900;font-family:inherit}
+.tog.sim{background:linear-gradient(135deg,#00c853,#1b5e20);color:#fff;box-shadow:0 4px 12px rgba(0,200,83,0.5)}
+.tog.nao{background:#37474f;color:#90a4ae}
+.tog-wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.ck{display:flex;align-items:center;gap:18px;padding:20px 0;cursor:pointer;border-bottom:2px solid rgba(255,255,255,0.15)}
+.ckb{width:46px;height:46px;border-radius:12px;border:3px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:30px;font-weight:900}
+.ckb.on{background:#00c853;border-color:#00c853;color:#1b5e20}
+.ckb.off{background:rgba(255,255,255,0.1);color:transparent}
+.ckt{font-size:30px;line-height:1.35;font-weight:700;color:#fff}
+.ckt.on{text-decoration:line-through;color:rgba(255,255,255,0.4)}
+.dsels{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+.dsel{padding:26px 10px;border-radius:20px;border:3px solid #37474f;background:#16213e;cursor:pointer;font-family:inherit;text-align:center;line-height:1.4}
+.dsel .dn{font-size:34px;font-weight:900;display:block;margin-bottom:6px;color:#90a4ae}
+.dsel .dd{font-size:24px;font-weight:700;color:#546e7a;display:block}
+.dsel.on-r{background:linear-gradient(135deg,#c62828,#b71c1c);border-color:#ef9a9a}
+.dsel.on-r .dn,.dsel.on-r .dd{color:#fff}
+.dsel.on-b{background:linear-gradient(135deg,#1565c0,#0d47a1);border-color:#90caf9}
+.dsel.on-b .dn,.dsel.on-b .dd{color:#fff}
+textarea,input[type=number]{width:100%;border-radius:18px;border:3px solid #37474f;padding:20px 22px;font-size:30px;font-family:inherit;background:#16213e;color:#fff;display:block;margin-bottom:18px;outline:none}
+textarea{resize:none}
+textarea:focus,input:focus{border-color:#e91e63}
+textarea::placeholder,input::placeholder{color:#546e7a}
+.imgs{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.imgt{position:relative;width:110px;height:110px}
+.imgt img{width:110px;height:110px;object-fit:cover;border-radius:14px;border:3px solid #e91e63}
+.imgd{position:absolute;top:-10px;right:-10px;width:34px;height:34px;border-radius:17px;border:none;background:#f44336;cursor:pointer;font-size:22px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center}
+.hcard{background:linear-gradient(135deg,#0f3460,#16213e);border-radius:22px;padding:24px;margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,0.3);border:3px solid #1565c0}
+.hrow{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;gap:10px}
+.htit{font-size:36px;font-weight:900;color:#64b5f6}
+.hsub{font-size:24px;color:#90a4ae;margin-top:5px;font-weight:700}
+.hres{font-size:28px;color:#b0bec5;line-height:1.6;margin-bottom:18px}
+.tag{padding:12px 20px;border-radius:26px;font-size:20px;font-weight:900;white-space:nowrap}
+.tok{background:#00c853;color:#003300}
+.twn{background:#ff9800;color:#3e2000}
+.ter{background:#f44336;color:#fff}
+.tcard{border-radius:22px;padding:24px;margin-bottom:18px;box-shadow:0 4px 15px rgba(0,0,0,0.3)}
+.tc-r{background:linear-gradient(135deg,#c62828,#b71c1c)}
+.tc-b{background:linear-gradient(135deg,#1565c0,#0d47a1)}
+.tc-o{background:linear-gradient(135deg,#e65100,#bf360c)}
+.tc-g{background:linear-gradient(135deg,#2e7d32,#1b5e20)}
+.trow{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;gap:10px}
+.tnm{font-size:34px;font-weight:900;color:#fff}
+.tmr{font-size:24px;color:rgba(255,255,255,0.75);margin-top:5px;font-weight:700}
+.tkm{font-size:34px;font-weight:900;color:#fff;text-align:right}
+.bar{background:rgba(0,0,0,0.3);border-radius:8px;height:20px;overflow:hidden;margin-bottom:12px}
+.barf{height:100%;border-radius:8px;background:rgba(255,255,255,0.9)}
+.bari{display:flex;justify-content:space-between;font-size:22px;color:rgba(255,255,255,0.85);font-weight:700}
+.vazio{text-align:center;padding:4rem 1rem}
+.vazio .vt{font-size:36px;font-weight:900;color:#546e7a;margin-bottom:12px}
+.vazio .vs{font-size:30px;color:#455a64;font-weight:700}
+</style>
+</head>
+<body>
+<div id="A">
+  <div class="nav" id="nav"></div>
+  <div class="scroll" id="scroll"></div>
+</div>
+<script>
+const SD2={1:0,2:0,3:0,4:0,5:0,6:1,7:0,8:1,9:0,10:0,11:0,12:1,13:0,14:1,15:0,16:1};
+const PL=[
+ {w:1,per:"18-24 mai",ph:"Fase 1 - Base",rc:0,d1:{t:"Intervalado 4x400m",p:"6:20/km",tip:"4 tiros | rec. 2min | Gelo apos"},d2:{t:"Longo suave 5 km",p:"7:00-7:30/km",tip:"Ritmo de conversa | meias"}},
+ {w:2,per:"25-31 mai",ph:"Fase 1 - Base",rc:0,d1:{t:"Intervalado 5x400m",p:"6:15/km",tip:"5 tiros | rec. 1min45 | Gelo apos"},d2:{t:"Longo suave 6 km",p:"7:00-7:20/km",tip:"Garrafinha | meias"}},
+ {w:3,per:"01-07 jun",ph:"Fase 1 - Recuperacao",rc:1,d1:{t:"Intervalado 3x400m",p:"6:30/km",tip:"Volume reduzido | Gelo apos"},d2:{t:"Longo suave 5 km",p:"7:30/km",tip:"Bem tranquilo"}},
+ {w:4,per:"08-14 jun",ph:"Fase 1 - Base",rc:0,d1:{t:"Intervalado 6x400m",p:"6:10/km",tip:"6 tiros | rec. 1min45 | Gelo apos"},d2:{t:"Longo suave 7 km",p:"7:00-7:20/km",tip:"Maior volume | garrafinha"}},
+ {w:5,per:"15-21 jun",ph:"Fase 2 - Transicao",rc:0,d1:{t:"Intervalado 4x600m",p:"6:10/km",tip:"Tiros mais longos | Gelo apos"},d2:{t:"Longo 7 km",p:"7:00-7:15/km",tip:"Glycerin Max | meias"}},
+ {w:6,per:"22-28 jun",ph:"Fase 2 - Transicao",rc:0,d1:{t:"Intervalado 5x600m",p:"6:05/km",tip:"5 tiros 600m | Gelo apos"},d2:{t:"Longo 8 km",p:"7:00-7:15/km",tip:"SC Trainer estreia! | meias"}},
+ {w:7,per:"29 jun-05 jul",ph:"Fase 2 - Recuperacao",rc:1,d1:{t:"Intervalado 4x400m",p:"6:30/km",tip:"Volume reduzido | Gelo apos"},d2:{t:"Longo suave 6 km",p:"7:30/km",tip:"Glycerin Max | tranquilo"}},
+ {w:8,per:"06-12 jul",ph:"Fase 2 - 3 Dia",rc:0,d1:{t:"Intervalado 5x600m",p:"6:00/km",tip:"5 tiros 600m | Gelo apos"},d2:{t:"Longo 8 km",p:"7:00-7:15/km",tip:"SC Trainer | 3 dia opcional"}},
+ {w:9,per:"13-19 jul",ph:"Fase 3 - Consolidacao",rc:0,d1:{t:"Intervalado 6x600m",p:"5:55/km",tip:"6 tiros | rec. 1min45 | Gelo apos"},d2:{t:"Longo 9 km",p:"7:00-7:15/km",tip:"Quase 10km! Glycerin Max"}},
+ {w:10,per:"20-26 jul",ph:"Fase 3 - Recuperacao",rc:1,d1:{t:"Intervalado 4x400m",p:"6:30/km",tip:"Volume reduzido | Gelo apos"},d2:{t:"Longo suave 7 km",p:"7:30/km",tip:"Glycerin Max | tranquilo"}},
+ {w:11,per:"27 jul-02 ago",ph:"Fase 3 - Consolidacao",rc:0,d1:{t:"Intervalado 4x800m",p:"6:05/km",tip:"Tiros de 800m | Gelo apos"},d2:{t:"Longo 9 km",p:"6:50-7:10/km",tip:"Glycerin Max | meias"}},
+ {w:12,per:"03-09 ago",ph:"Fase 3 - Primeiro 10km",rc:0,d1:{t:"Intervalado 4x800m",p:"6:00/km",tip:"4 tiros 800m | Gelo apos"},d2:{t:"LONGO 10 KM!",p:"7:00-7:20/km",tip:"SC Trainer | PRIMEIRO 10km!"}},
+ {w:13,per:"10-16 ago",ph:"Fase 4 - Recuperacao",rc:1,d1:{t:"Intervalado 5x400m",p:"6:20/km",tip:"Pos-10km | Gelo apos"},d2:{t:"Longo suave 8 km",p:"7:30/km",tip:"Glycerin Max | recuperacao"}},
+ {w:14,per:"17-23 ago",ph:"Fase 4 - Performance",rc:0,d1:{t:"Intervalado 5x800m",p:"6:00/km",tip:"5 tiros 800m | Gelo apos"},d2:{t:"Longo 10 km",p:"6:50-7:10/km",tip:"SC Trainer | 2 longao"}},
+ {w:15,per:"24-30 ago",ph:"Fase 4 - Performance",rc:0,d1:{t:"Intervalado 5x1000m",p:"6:05/km",tip:"Maior tiro do ciclo! | Gelo apos"},d2:{t:"Longo 10 km",p:"6:45-7:00/km",tip:"Glycerin Max | 3 longao"}},
+ {w:16,per:"31 ago-06 set",ph:"Fase 4 - Objetivo Final",rc:0,d1:{t:"Intervalado 4x800m",p:"5:55/km",tip:"Volume reduz | Gelo apos"},d2:{t:"10 KM CONFORTAVEL",p:"6:40-7:00/km",tip:"SC Trainer | OBJETIVO!"}},
+];
+const TEN=[
+  {key:"boston13",n:"Boston 13",m:"Adidas",max:600,cl:"tc-r"},
+  {key:"glycerinMax",n:"Glycerin Max",m:"Brooks",max:900,cl:"tc-b"},
+  {key:"nimbus26",n:"Nimbus 26",m:"Asics",max:900,cl:"tc-o"},
+  {key:"scTrainer",n:"SC Trainer V3",m:"New Balance",max:500,cl:"tc-g"},
+];
+const SNM={boston13:"Boston 13",glycerinMax:"Glycerin Max",nimbus26:"Nimbus 26",scTrainer:"SC Trainer V3"};
+
+let S={tab:"home",w:1,tv:false,tr:[],km:{boston13:0,glycerinMax:0,nimbus26:0,scTrainer:0},dia:"1",imgs:[],notas:"",dist:"",ck:{}};
+
+function load(){
+  try{S.w=parseInt(localStorage.getItem("w"))||1;}catch(e){}
+  try{S.tv=localStorage.getItem("tv")==="1";}catch(e){}
+  try{S.tr=JSON.parse(localStorage.getItem("tr")||"[]");}catch(e){}
+  try{S.km=Object.assign({boston13:0,glycerinMax:0,nimbus26:0,scTrainer:0},JSON.parse(localStorage.getItem("km")||"{}"));}catch(e){}
+}
+function sv(k,v){try{localStorage.setItem(k,typeof v==="string"?v:JSON.stringify(v));}catch(e){}}
+function setTab(t){S.tab=t;render();}
+function chSem(d){const n=S.w+d;if(n<1||n>16)return;S.w=n;sv("w",n);render();}
+function togVi(){S.tv=!S.tv;sv("tv",S.tv?"1":"0");render();}
+function togCk(id){S.ck[id]=!S.ck[id];render();}
+function setDia(d){S.dia=d;render();}
+function addI(inp){Array.from(inp.files).forEach(f=>{const r=new FileReader();r.onload=e=>{S.imgs.push(e.target.result);render();};r.readAsDataURL(f);});}
+function rmImg(i){S.imgs.splice(i,1);render();}
+
+function analisar(){
+  const pl=PL[S.w-1];const isSC=SD2[S.w]===1;
+  const ten=S.dia==="1"?"Boston 13":(isSC?"NB FuelCell SC Trainer V3":"Glycerin Max");
+  const di=S.dia==="1"?pl.d1:pl.d2;
+  const day=S.dia==="1"?(S.tv?"Quarta (Catole do Rocha)":"Terca (Joao Pessoa)"):(S.tv?"Domingo (Joao Pessoa)":"Sexta (Joao Pessoa)");
+  const msg="[REGISTRO DE TREINO]\nSemana "+S.w+" | Dia "+S.dia+" | "+new Date().toLocaleDateString("pt-BR")+"\nDia: "+day+"\nTreino: "+di.t+" - Pace "+di.p+"\nTenis: "+ten+"\nDistancia: "+(S.dist||"nao informada")+" km\n"+(S.imgs.length>0?S.imgs.length+" print(s) do Samsung Health\n":"")+(S.notas?"Obs: "+S.notas+"\n":"")+"\nCopie essas informacoes e cole no chat do Claude em claude.ai para obter a analise completa.";
+  alert(msg);
+}
+
+function salvarTreino(){
+  const isSC=SD2[S.w]===1;const sk=S.dia==="1"?"boston13":(isSC?"scTrainer":"glycerinMax");
+  const wo={w:S.w,d:S.dia,sk,km:parseFloat(S.dist)||0,dt:new Date().toLocaleDateString("pt-BR"),can:"sem_dor",res:""};
+  S.tr.unshift(wo);sv("tr",S.tr);
+  const k=Object.assign({},S.km);if(sk&&wo.km>0)k[sk]=(k[sk]||0)+wo.km;S.km=k;sv("km",k);
+  S.imgs=[];S.notas="";S.dist="";
+  alert("Treino salvo com sucesso!");setTab("hist");
+}
+
+function xpdf(i){
+  const wo=S.tr[i];if(!wo)return;
+  const w=window.open("","_blank");
+  if(!w){alert("Permita pop-ups para exportar PDF.");return;}
+  w.document.write("<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Relatorio "+wo.dt+"</title><style>body{font-family:Arial,sans-serif;max-width:600px;margin:40px auto;padding:0 24px;font-size:16px;color:#111}h1{font-size:26px;font-weight:800}p.sub{color:#666;font-size:14px;margin:6px 0 24px}.box{background:#f5f5f5;border-radius:8px;padding:16px;line-height:1.7}.ft{font-size:12px;color:#bbb;margin-top:32px;padding-top:12px;border-top:1px solid #eee}</style></head><body><h1>Relatorio de Treino</h1><p class='sub'>Semana "+wo.w+" - Dia "+wo.d+" - "+wo.dt+(wo.km>0?" - "+wo.km+"km":"")+(wo.sk?" - "+SNM[wo.sk]:"")+"</p><div class='box'>"+(wo.res||"Treino registrado manualmente.")+"</div><p class='ft'>Plano Emagrecimento + 10km - Dimas Junho - "+wo.dt+"</p><script>window.onload=function(){setTimeout(function(){window.print()},400)}<\/script></body></html>");
+  w.document.close();
+}
+
+function render(){
+  const pl=PL[S.w-1];const isSC=SD2[S.w]===1;
+  const d1day=S.tv?"Quarta (Catole)":"Terca (JP)";
+  const d2day=S.tv?"Domingo (JP)":"Sexta (JP)";
+  const d2ten=isSC?"SC Trainer V3 (New Balance)":"Glycerin Max (Brooks)";
+  const tabs=[["home","INICIO"],["reg","REGISTRO"],["hist","HISTORICO"],["shoes","TENIS"]];
+
+  document.getElementById("nav").innerHTML=
+    "<div class='nav-h'><div><h1>Semana "+S.w+"</h1><div class='fa'>"+pl.ph+"</div></div>"+(pl.rc?"<span class='rec-tag'>Recuperacao</span>":"")+"</div>"+
+    "<div class='tabs'>"+tabs.map(([id,lb])=>"<button class='tb "+(S.tab===id?"on":"")+"' onclick=\"setTab('"+id+"')\">"+lb+"</button>").join("")+"</div>";
+
+  let H="";
+
+  if(S.tab==="home"){
+    const cks=[["c0","Pressao menor que 150/90 mmHg"],["c1","Hidratacao: 400-500ml antes"],["c2","Tenis correto separado"],["c3","Gelo preparado para apos"],["c4","Meias de compressao (acima de 7km)"]];
+    H="<div class='pg'>"+
+    "<div class='semn'><button class='nb' onclick='chSem(-1)' "+(S.w===1?"disabled style='opacity:0.3'":"")+">&lt;</button><div class='mid'><div class='m1'>Sem "+S.w+" de 16</div><div class='m2'>"+pl.per+"</div></div><button class='nb' onclick='chSem(1)' "+(S.w===16?"disabled style='opacity:0.3'":"")+">&gt;</button></div>"+
+    "<div class='card-viagem'><div class='tog-wrap'><div style='flex:1'><p style='font-size:36px;font-weight:900;color:#fff;margin-bottom:8px'>Semana de viagem?</p><p style='font-size:28px;color:#90caf9;font-weight:700'>"+(S.tv?"Qua (Catole) + Dom (JP)":"Ter + Sex em JP")+"</p></div><button class='tog "+(S.tv?"sim":"nao")+"' onclick='togVi()'>"+(S.tv?"SIM":"NAO")+"</button></div></div>"+
+    "<div class='card-d1'><span class='lbl'>DIA 1 - "+d1day+"</span><p class='h3'>"+pl.d1.t+"</p><p class='sub'>Pace: "+pl.d1.p+"</p><div class='cg-claro'><p class='ten-nome'>Boston 13 (Adidas)</p><p class='tip'>"+pl.d1.tip+"</p></div></div>"+
+    "<div class='"+(isSC?"card-d2-g":"card-d2-b")+"'><span class='lbl'>DIA 2 - "+d2day+"</span><p class='h3'>"+pl.d2.t+"</p><p class='sub'>Pace: "+pl.d2.p+"</p><div class='cg-claro'><p class='ten-nome'>"+d2ten+"</p><p class='tip'>"+pl.d2.tip+"</p></div></div>"+
+    "<div class='card-ck'><p style='font-size:36px;font-weight:900;color:#fff;margin-bottom:16px'>Checklist pre-treino</p>"+
+    cks.map(([id,txt])=>"<div class='ck' onclick=\"togCk('"+id+"')\"><div class='ckb "+(S.ck[id]?"on":"off")+"'>"+(S.ck[id]?"V":"")+"</div><span class='ckt "+(S.ck[id]?"on":"")+"'>"+txt+"</span></div>").join("")+"</div></div>";
+  }
+  else if(S.tab==="reg"){
+    const isSC=SD2[S.w]===1;
+    const di=S.dia==="1"?pl.d1:pl.d2;
+    const tenLabel=S.dia==="1"?"Boston 13 (Adidas)":(isSC?"SC Trainer V3 (New Balance)":"Glycerin Max (Brooks)");
+    const podeEnv=S.notas.trim().length>0||S.imgs.length>0;
+    H="<div class='pg'><p class='h2'>Registrar treino</p>"+
+    "<div class='card-aviso'><p style='font-size:28px;font-weight:700;color:#90caf9;line-height:1.6'>Preencha os dados e clique em ANALISAR. Abra o Claude em outra aba e cole as informacoes para obter o relatorio!</p></div>"+
+    "<div class='dsels'>"+
+      "<button class='dsel "+(S.dia==="1"?"on-r":"")+"' onclick=\"setDia('1')\"><span class='dn'>DIA 1</span><span class='dd'>"+(S.tv?"Quarta":"Terca")+"</span></button>"+
+      "<button class='dsel "+(S.dia==="2"?"on-b":"")+"' onclick=\"setDia('2')\"><span class='dn'>DIA 2</span><span class='dd'>"+(S.tv?"Domingo":"Sexta")+"</span></button>"+
+    "</div>"+
+    "<div class='card-info'><p class='ten-nome'>"+tenLabel+"</p><p class='tip'>"+di.t+" | Pace: "+di.p+"</p></div>"+
+    "<button class='btn btn-foto' onclick=\"document.getElementById('fi').click()\"><span style='font-size:42px'>FOTO</span><span style='font-size:26px'>Adicionar prints do Samsung Health</span></button>"+
+    "<input type='file' id='fi' accept='image/*' multiple style='display:none' onchange='addI(this)'>"+
+    (S.imgs.length?"<div class='imgs'>"+S.imgs.map((_,i)=>"<div class='imgt'><img id='im"+i+"'><button class='imgd' onclick='rmImg("+i+")'>X</button></div>").join("")+"</div>":"")+
+    "<input type='number' id='idist' placeholder='Distancia em km' value='"+S.dist+"' oninput=\"S.dist=this.value\" step='0.1'>"+
+    "<textarea id='inotas' rows='4' placeholder='Como foi o treino? Dores, canelas, sensacoes...' oninput=\"S.notas=this.value\">"+S.notas+"</textarea>"+
+    "<button class='btn btn-az' onclick='analisar()' "+(podeEnv?"":"disabled style='opacity:0.4'")+">&gt;&gt; GERAR RESUMO</button>"+
+    "<button class='btn btn-vd' onclick='salvarTreino()'>&gt;&gt; SALVAR TREINO</button></div>";
+    setTimeout(()=>S.imgs.forEach((_,i)=>{const el=document.getElementById("im"+i);if(el)el.src=S.imgs[i];}),50);
+  }
+  else if(S.tab==="hist"){
+    if(!S.tr.length){
+      H="<div class='pg'><p class='h2'>Historico</p><div class='vazio'><p class='vt'>Nenhum treino salvo ainda</p><p class='vs'>Va em REGISTRO para adicionar!</p></div></div>";
+    } else {
+      const cTag={sem_dor:"tok",leve_desconforto:"twn",dor:"ter"};
+      const cLab={sem_dor:"Canelas ok",leve_desconforto:"Leve desconforto",dor:"Com dor"};
+      H="<div class='pg'><p class='h2'>Historico</p>"+
+        S.tr.map((wo,i)=>"<div class='hcard'><div class='hrow'><div style='flex:1'><p class='htit'>Sem "+wo.w+" - Dia "+wo.d+"</p><p class='hsub'>"+wo.dt+(wo.km>0?" | "+wo.km+"km":"")+(wo.sk?" | "+SNM[wo.sk]:"")+"</p></div><span class='tag "+(cTag[wo.can]||"tok")+"'>"+(cLab[wo.can]||"ok")+"</span></div><p class='hres'>"+(wo.res||"Treino registrado.")+"</p><button class='btn btn-az' onclick='xpdf("+i+")'>EXPORTAR PDF</button></div>").join("")+"</div>";
+    }
+  }
+  else if(S.tab==="shoes"){
+    H="<div class='pg'><p class='h2'>Controle de Tenis</p>"+
+      TEN.map(t=>{
+        const km=Math.round(S.km[t.key]||0);const pct=Math.min(100,Math.round((km/t.max)*100));
+        return "<div class='tcard "+t.cl+"'><div class='trow'><div style='flex:1'><p class='tnm'>"+t.n+"</p><p class='tmr'>"+t.m+"</p></div><p class='tkm'>"+km+" / "+t.max+" km</p></div><div class='bar'><div class='barf' style='width:"+pct+"%'></div></div><div class='bari'><span>"+pct+"% da vida util</span><span>~"+(t.max-km)+" km rest.</span></div></div>";
+      }).join("")+
+      "<p style='font-size:22px;color:#546e7a;text-align:center;margin-top:10px;font-weight:700'>Km acumulados ao salvar treinos</p></div>";
+  }
+
+  document.getElementById("scroll").innerHTML=H;
+}
+load();render();
+</script>
+</body>
+</html>
